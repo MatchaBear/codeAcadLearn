@@ -1,17 +1,12 @@
 
 // myAge assignment is my age in real life
-let myAge = 3;
+let myAge = 33;
 
 // early years of a dog
-let earlyYears = 2;
-
 earlyYears = 2 * 10.5;
 
 // sisa dari earlyYears
-let laterYears = myAge - earlyYears;
-
-// nilai dari laterYears of a dog
-laterYears *= 4;
+let laterYears = (myAge - 2) * 4;
 
 console.log(earlyYears);
 console.log(laterYears);
