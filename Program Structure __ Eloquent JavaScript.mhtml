@@ -1,0 +1,3362 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://eloquentjavascript.net/02_program_structure.html
+Subject: Program Structure :: Eloquent JavaScript
+Date: Sat, 30 Jan 2021 18:35:47 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----"
+
+
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: text/html
+Content-ID: <frame-782153F8CC00F6959867B76C12F39C11@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/02_program_structure.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8">
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <title>Program Structure :: Eloquent JavaScript</title>
+  <link rel=3D"stylesheet" href=3D"https://eloquentjavascript.net/js/node_m=
+odules/codemirror/lib/codemirror.css">
+ =20
+  <link rel=3D"stylesheet" href=3D"https://eloquentjavascript.net/css/ejs.c=
+ss">
+ =20
+  </head>
+
+<body><article>
+<nav><a href=3D"https://eloquentjavascript.net/01_values.html" title=3D"pre=
+vious chapter">=E2=97=80</a>&nbsp;<a href=3D"https://eloquentjavascript.net=
+/index.html" title=3D"cover">=E2=97=86</a>&nbsp;<a href=3D"https://eloquent=
+javascript.net/03_functions.html" title=3D"next chapter">=E2=96=B6</a></nav=
+>
+
+<h1><span class=3D"chap_num">Chapter 2</span>Program Structure</h1>
+
+<blockquote>
+
+<p><a class=3D"p_ident" id=3D"p_J/zCYrllfQ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_J/zCYrllfQ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>And my heart glows bright red under my filmy, translucent sk=
+in and they have to administer 10cc of JavaScript to get me to come back. (=
+I respond well to toxins in the blood.) Man, that stuff will kick the peach=
+es right out your gills!</p>
+
+<footer>_why, <cite>Why's (Poignant) Guide to Ruby</cite></footer>
+
+</blockquote><figure class=3D"chapter framed"><img src=3D"https://eloquentj=
+avascript.net/img/chapter_picture_2.jpg" alt=3D"Picture of tentacles holdin=
+g objects"></figure>
+
+<p><a class=3D"p_ident" id=3D"p_D1mgO0fMBD" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_D1mgO0fMBD" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In this chapter, we will start to do things that can actuall=
+y be called <em>programming</em>. We will expand our command of the JavaScr=
+ipt language beyond the nouns and sentence fragments we=E2=80=99ve seen so =
+far, to the point where we can express meaningful prose.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_5fUOQZwwHx" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_5fUOQZwwHx" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Expressions and statements</h2>
+
+<p><a class=3D"p_ident" id=3D"p_qwJQaYxUlJ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_qwJQaYxUlJ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In <a href=3D"https://eloquentjavascript.net/01_values.html"=
+>Chapter 1</a>, we made values and applied operators to them to get new val=
+ues. Creating values like this is the main substance of any JavaScript prog=
+ram. But that substance has to be framed in a larger structure to be useful=
+. So that=E2=80=99s what we=E2=80=99ll cover next.</p>
+
+<p><a class=3D"p_ident" id=3D"p_8CCep1TQ8b" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8CCep1TQ8b" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A fragment of code that produces a value is called an <em>ex=
+pression</em>. Every value that is written literally (such as <code>22</cod=
+e> or <code>"psychoanalysis"</code>) is an expression. An expression betwee=
+n parentheses is also an expression, as is a binary operator applied to two=
+ expressions or a unary operator applied to one.</p>
+
+<p><a class=3D"p_ident" id=3D"p_QXQG3kVSFh" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_QXQG3kVSFh" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This shows part of the beauty of a language-based interface.=
+ Expressions can contain other expressions in a way similar to how subsente=
+nces in human languages are nested=E2=80=94a subsentence can contain its ow=
+n subsentences, and so on. This allows us to build expressions that describ=
+e arbitrarily complex computations.</p>
+
+<p><a class=3D"p_ident" id=3D"p_UM5/kUz1tD" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_UM5/kUz1tD" tabindex=3D"-1" role=3D"pre=
+sentation"></a>If an expression corresponds to a sentence fragment, a JavaS=
+cript <em>statement</em> corresponds to a full sentence. A program is a lis=
+t of statements.</p>
+
+<p><a class=3D"p_ident" id=3D"p_NAzxo1M6WC" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_NAzxo1M6WC" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The simplest kind of statement is an expression with a semic=
+olon after it. This is a program:</p>
+
+<div class=3D"editor-wrap" style=3D"margin-right: -100px; margin-left: -100=
+px;"><div class=3D"CodeMirror cm-s-default"><div style=3D"overflow: hidden;=
+ position: relative; width: 3px; height: 0px; top: 29px; left: 90.8px;"><te=
+xtarea autocorrect=3D"off" autocapitalize=3D"off" spellcheck=3D"false" styl=
+e=3D"position: absolute; bottom: -1em; padding: 0px; width: 1000px; height:=
+ 1em; outline: none;" tabindex=3D"0"></textarea></div><div class=3D"CodeMir=
+ror-vscrollbar" cm-not-content=3D"true"><div style=3D"min-width: 1px; heigh=
+t: 0px;"></div></div><div class=3D"CodeMirror-hscrollbar" cm-not-content=3D=
+"true"><div style=3D"height: 100%; min-height: 1px; width: 0px;"></div></di=
+v><div class=3D"CodeMirror-scrollbar-filler" cm-not-content=3D"true"></div>=
+<div class=3D"CodeMirror-gutter-filler" cm-not-content=3D"true"></div><div =
+class=3D"CodeMirror-scroll" tabindex=3D"-1"><div class=3D"CodeMirror-sizer"=
+ style=3D"margin-left: 16px; margin-bottom: -16px; border-right-width: 14px=
+; min-height: 80px; min-width: 77.8px; padding-right: 0px; padding-bottom: =
+0px;"><div style=3D"position: relative; top: 0px;"><div class=3D"CodeMirror=
+-lines" role=3D"presentation"><div role=3D"presentation" style=3D"position:=
+ relative; outline: none;"><div class=3D"CodeMirror-measure"><pre>x</pre></=
+div><div class=3D"CodeMirror-measure"></div><div style=3D"position: relativ=
+e; z-index: 1;"></div><div class=3D"CodeMirror-cursors" style=3D""><div cla=
+ss=3D"CodeMirror-cursor" style=3D"left: 74.8px; top: 24px; height: 24px;">&=
+nbsp;</div></div><div class=3D"CodeMirror-code" role=3D"presentation"><div =
+style=3D"position: relative;"><div class=3D"CodeMirror-gutter-wrapper" styl=
+e=3D"left: -16px;"><div class=3D"CodeMirror-linenumber CodeMirror-gutter-el=
+t" style=3D"left: 0px; width: 13px;">1</div></div><pre class=3D" CodeMirror=
+-line " role=3D"presentation"><span role=3D"presentation" style=3D"padding-=
+right: 0.1px;"><span class=3D"cm-number">1</span>;</span></pre></div><div s=
+tyle=3D"position: relative;"><div class=3D"CodeMirror-gutter-wrapper" style=
+=3D"left: -16px;"><div class=3D"CodeMirror-linenumber CodeMirror-gutter-elt=
+" style=3D"left: 0px; width: 13px;">2</div></div><pre class=3D" CodeMirror-=
+line " role=3D"presentation"><span role=3D"presentation" style=3D"padding-r=
+ight: 0.1px;"><span class=3D"cm-operator">!</span><span class=3D"cm-atom">t=
+rue</span>;</span></pre></div><div style=3D"position: relative;"><div class=
+=3D"CodeMirror-gutter-wrapper" style=3D"left: -16px;"><div class=3D"CodeMir=
+ror-linenumber CodeMirror-gutter-elt" style=3D"left: 0px; width: 13px;">3</=
+div></div><pre class=3D" CodeMirror-line " role=3D"presentation"><span role=
+=3D"presentation" style=3D"padding-right: 0.1px;"><span cm-text=3D"">=E2=80=
+=8B</span></span></pre></div></div></div></div></div></div><div style=3D"po=
+sition: absolute; height: 14px; width: 1px; border-bottom: 0px solid transp=
+arent; top: 80px;"></div><div class=3D"CodeMirror-gutters" style=3D"height:=
+ 94px; left: 0px;"><div class=3D"CodeMirror-gutter CodeMirror-linenumbers" =
+style=3D"width: 16px;"></div></div></div></div><div class=3D"sandbox-output=
+"></div><div class=3D"sandbox-menu" title=3D"Sandbox menu..."></div></div><=
+pre class=3D"snippet cm-s-default" data-language=3D"javascript" style=3D"di=
+splay: none;"><a class=3D"c_ident" id=3D"c_hjwmfcgDR0" href=3D"https://eloq=
+uentjavascript.net/02_program_structure.html#c_hjwmfcgDR0" tabindex=3D"-1" =
+role=3D"presentation"></a><span class=3D"cm-number">1</span>;
+<span class=3D"cm-operator">!</span><span class=3D"cm-atom">false</span>;</=
+pre>
+
+<p><a class=3D"p_ident" id=3D"p_dj4UvUmws0" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_dj4UvUmws0" tabindex=3D"-1" role=3D"pre=
+sentation"></a>It is a useless program, though. An expression can be conten=
+t to just produce a value, which can then be used by the enclosing code. A =
+statement stands on its own, so it amounts to something only if it affects =
+the world. It could display something on the screen=E2=80=94that counts as =
+changing the world=E2=80=94or it could change the internal state of the mac=
+hine in a way that will affect the statements that come after it. These cha=
+nges are called <em>side effects</em>. The statements in the previous examp=
+le just produce the values <code>1</code> and <code>true</code> and then im=
+mediately throw them away. This leaves no impression on the world at all. W=
+hen you run this program, nothing observable happens.</p>
+
+<p><a class=3D"p_ident" id=3D"p_z/83KOxUGo" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_z/83KOxUGo" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In some cases, JavaScript allows you to omit the semicolon a=
+t the end of a statement. In other cases, it has to be there, or the next l=
+ine will be treated as part of the same statement. The rules for when it ca=
+n be safely omitted are somewhat complex and error-prone. So in this book, =
+every statement that needs a semicolon will always get one. I recommend you=
+ do the same, at least until you=E2=80=99ve learned more about the subtleti=
+es of missing semicolons.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_lnOC+GBEtu" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_lnOC+GBEtu" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Bindings</h2>
+
+<p><a class=3D"p_ident" id=3D"p_jG4q4gLJDw" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_jG4q4gLJDw" tabindex=3D"-1" role=3D"pre=
+sentation"></a>How does a program keep an internal state? How does it remem=
+ber things? We have seen how to produce new values from old values, but thi=
+s does not change the old values, and the new value has to be immediately u=
+sed or it will dissipate again. To catch and hold values, JavaScript provid=
+es a thing called a <em>binding</em>, or <em>variable</em>:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_aT9yLxdY/V" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_aT9yLxdY/V" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">caught</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">5</spa=
+n> <span class=3D"cm-operator">*</span> <span class=3D"cm-number">5</span>;=
+</pre>
+
+<p><a class=3D"p_ident" id=3D"p_22bMgVFwvP" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_22bMgVFwvP" tabindex=3D"-1" role=3D"pre=
+sentation"></a>That=E2=80=99s a second kind of statement. The special word =
+(<em>keyword</em>) <code>let</code> indicates that this sentence is going t=
+o define a binding. It is followed by the name of the binding and, if we wa=
+nt to immediately give it a value, by an <code>=3D</code> operator and an e=
+xpression.</p>
+
+<p><a class=3D"p_ident" id=3D"p_EkxlfkTaWl" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_EkxlfkTaWl" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The previous statement creates a binding called <code>caught=
+</code> and uses it to grab hold of the number that is produced by multiply=
+ing 5 by 5.</p>
+
+<p><a class=3D"p_ident" id=3D"p_sAeFT14um2" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_sAeFT14um2" tabindex=3D"-1" role=3D"pre=
+sentation"></a>After a binding has been defined, its name can be used as an=
+ expression. The value of such an expression is the value the binding curre=
+ntly holds. Here=E2=80=99s an example:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_FfLIqaoaFx" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_FfLIqaoaFx" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">ten</span>=
+ <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">10</span>=
+;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">ten</span> <span class=3D"cm-operator">*=
+</span> <span class=3D"cm-variable">ten</span>);
+<span class=3D"cm-comment">// =E2=86=92 100</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_sR/0q2q2n6" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_sR/0q2q2n6" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When a binding points at a value, that does not mean it is t=
+ied to that value forever. The <code>=3D</code> operator can be used at any=
+ time on existing bindings to disconnect them from their current value and =
+have them point to a new one.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_FiZBrHz3CX" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_FiZBrHz3CX" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">mood</span=
+> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-string">"light"<=
+/span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">mood</span>);
+<span class=3D"cm-comment">// =E2=86=92 light</span>
+<span class=3D"cm-variable">mood</span> <span class=3D"cm-operator">=3D</sp=
+an> <span class=3D"cm-string">"dark"</span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">mood</span>);
+<span class=3D"cm-comment">// =E2=86=92 dark</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_tdX1rrdcPQ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_tdX1rrdcPQ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You should imagine bindings as tentacles, rather than boxes.=
+ They do not <em>contain</em> values; they <em>grasp</em> them=E2=80=94two =
+bindings can refer to the same value. A program can access only the values =
+that it still has a reference to. When you need to remember something, you =
+grow a tentacle to hold on to it or you reattach one of your existing tenta=
+cles to it.</p>
+
+<p><a class=3D"p_ident" id=3D"p_xk5wAppssa" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_xk5wAppssa" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Let=E2=80=99s look at another example. To remember the numbe=
+r of dollars that Luigi still owes you, you create a binding. And then when=
+ he pays back $35, you give this binding a new value.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_UpFQBNACng" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_UpFQBNACng" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">luigisDebt=
+</span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">14=
+0</span>;
+<span class=3D"cm-variable">luigisDebt</span> <span class=3D"cm-operator">=
+=3D</span> <span class=3D"cm-variable">luigisDebt</span> <span class=3D"cm-=
+operator">-</span> <span class=3D"cm-number">35</span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">luigisDebt</span>);
+<span class=3D"cm-comment">// =E2=86=92 105</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_OlJt23pj8f" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_OlJt23pj8f" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When you define a binding without giving it a value, the ten=
+tacle has nothing to grasp, so it ends in thin air. If you ask for the valu=
+e of an empty binding, you=E2=80=99ll get the value <code>undefined</code>.=
+</p>
+
+<p><a class=3D"p_ident" id=3D"p_s1Y1EgGqy/" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_s1Y1EgGqy/" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A single <code>let</code> statement may define multiple bind=
+ings. The definitions must be separated by commas.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_pT4pqev8kx" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_pT4pqev8kx" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">one</span>=
+ <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">1</span>,=
+ <span class=3D"cm-def">two</span> <span class=3D"cm-operator">=3D</span> <=
+span class=3D"cm-number">2</span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">one</span> <span class=3D"cm-operator">+=
+</span> <span class=3D"cm-variable">two</span>);
+<span class=3D"cm-comment">// =E2=86=92 3</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_9npyA8SKtx" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_9npyA8SKtx" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The words <code>var</code> and <code>const</code> can also b=
+e used to create bindings, in a way similar to <code>let</code>.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_8QmBe23E5V" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_8QmBe23E5V" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">var</span> <span class=3D"cm-def">name</span=
+> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-string">"Ayda"</=
+span>;
+<span class=3D"cm-keyword">const</span> <span class=3D"cm-def">greeting</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-string">"Hello=
+ "</span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">greeting</span> <span class=3D"cm-operat=
+or">+</span> <span class=3D"cm-variable">name</span>);
+<span class=3D"cm-comment">// =E2=86=92 Hello Ayda</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_IvQMyQVoj9" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_IvQMyQVoj9" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The first, <code>var</code> (short for =E2=80=9Cvariable=E2=
+=80=9D), is the way bindings were declared in pre-2015 JavaScript. I=E2=80=
+=99ll get back to the precise way it differs from <code>let</code> in the <=
+a href=3D"https://eloquentjavascript.net/03_functions.html">next chapter</a=
+>. For now, remember that it mostly does the same thing, but we=E2=80=99ll =
+rarely use it in this book because it has some confusing properties.</p>
+
+<p><a class=3D"p_ident" id=3D"p_ReUkO4pLEi" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_ReUkO4pLEi" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The word <code>const</code> stands for <em>constant</em>. It=
+ defines a constant binding, which points at the same value for as long as =
+it lives. This is useful for bindings that give a name to a value so that y=
+ou can easily refer to it later.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_SbWNrIYjdH" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_SbWNrIYjdH" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Binding names</h2>
+
+<p><a class=3D"p_ident" id=3D"p_D+UoiHGeN5" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_D+UoiHGeN5" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Binding names can be any word. Digits can be part of binding=
+ names=E2=80=94<code>catch22</code> is a valid name, for example=E2=80=94bu=
+t the name must not start with a digit. A binding name may include dollar s=
+igns (<code>$</code>) or underscores (<code>_</code>) but no other punctuat=
+ion or special characters.</p>
+
+<p><a class=3D"p_ident" id=3D"p_GioEDRc+dl" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_GioEDRc+dl" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Words with a special meaning, such as <code>let</code>, are =
+<em>keywords</em>, and they may not be used as binding names. There are als=
+o a number of words that are =E2=80=9Creserved for use=E2=80=9D in future v=
+ersions of JavaScript, which also can=E2=80=99t be used as binding names. T=
+he full list of keywords and reserved words is rather long.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"text/plain"><a class=
+=3D"c_ident" id=3D"c_7BGolnv7qC" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_7BGolnv7qC" tabindex=3D"-1" role=3D"presentation">=
+</a>break case catch class const continue debugger default
+delete do else enum export extends false finally for
+function if implements import interface in instanceof let
+new package private protected public return static super
+switch this throw true try typeof var void while with yield</pre>
+
+<p><a class=3D"p_ident" id=3D"p_5y7TPJMRIf" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_5y7TPJMRIf" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Don=E2=80=99t worry about memorizing this list. When creatin=
+g a binding produces an unexpected syntax error, see whether you=E2=80=99re=
+ trying to define a reserved word.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_2Tc54fkIgF" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_2Tc54fkIgF" tabindex=3D"-1" role=3D"pr=
+esentation"></a>The environment</h2>
+
+<p><a class=3D"p_ident" id=3D"p_tJKFexJV/j" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_tJKFexJV/j" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The collection of bindings and their values that exist at a =
+given time is called the <em>environment</em>. When a program starts up, th=
+is environment is not empty. It always contains bindings that are part of t=
+he language standard, and most of the time, it also has bindings that provi=
+de ways to interact with the surrounding system. For example, in a browser,=
+ there are functions to interact with the currently loaded website and to r=
+ead mouse and keyboard input.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_K5Yd6h3Axg" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_K5Yd6h3Axg" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Functions</h2>
+
+<p><a class=3D"p_ident" id=3D"p_S7KjMy3yAl" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_S7KjMy3yAl" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A lot of the values provided in the default environment have=
+ the type <em>function</em>. A function is a piece of program wrapped in a =
+value. Such values can be <em>applied</em> in order to run the wrapped prog=
+ram. For example, in a browser environment, the binding <code>prompt</code>=
+ holds a function that shows a little dialog box asking for user input. It =
+is used like this:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_QSUssd4nHv" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_QSUssd4nHv" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">prompt</span>(<span class=3D"cm-string">"En=
+ter passcode"</span>);</pre><figure><img src=3D"https://eloquentjavascript.=
+net/img/prompt.png" alt=3D"A prompt dialog"></figure>
+
+<p><a class=3D"p_ident" id=3D"p_9qu6Ki2/lH" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_9qu6Ki2/lH" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Executing a function is called <em>invoking</em>, <em>callin=
+g</em>, or <em>applying</em> it. You can call a function by putting parenth=
+eses after an expression that produces a function value. Usually you=E2=80=
+=99ll directly use the name of the binding that holds the function. The val=
+ues between the parentheses are given to the program inside the function. I=
+n the example, the <code>prompt</code> function uses the string that we giv=
+e it as the text to show in the dialog box. Values given to functions are c=
+alled <em>arguments</em>. Different functions might need a different number=
+ or different types of arguments.</p>
+
+<p><a class=3D"p_ident" id=3D"p_P1XUFb0AF2" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_P1XUFb0AF2" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>prompt</code> function isn=E2=80=99t used much in =
+modern web programming, mostly because you have no control over the way the=
+ resulting dialog looks, but can be helpful in toy programs and experiments=
+.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_6+Vb3XQoaa" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_6+Vb3XQoaa" tabindex=3D"-1" role=3D"pr=
+esentation"></a>The console.log function</h2>
+
+<p><a class=3D"p_ident" id=3D"p_z9zlqeaeEN" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_z9zlqeaeEN" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In the examples, I used <code>console.log</code> to output v=
+alues. Most JavaScript systems (including all modern web browsers and Node.=
+js) provide a <code>console.log</code> function that writes out its argumen=
+ts to <em>some</em> text output device. In browsers, the output lands in th=
+e JavaScript
+console. This part of the browser interface is hidden by default, but most =
+browsers open it when you press F12 or, on a Mac, <span class=3D"keyname">c=
+ommand</span>-<span class=3D"keyname">option</span>-I. If that does not wor=
+k, search through the menus for an item named Developer Tools or similar.</=
+p>
+
+<p><a class=3D"p_ident" id=3D"p_KiTJ1BsGuf" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_KiTJ1BsGuf" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When running the examples (or your own code) on the pages of=
+ this book, <code>console.log</code> output will be shown after the example=
+, instead of in the browser=E2=80=99s JavaScript console.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_TuaqUrwlKB" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_TuaqUrwlKB" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">x</span> <=
+span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">30</span>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-string">"the value of x is"</span>, <span class=3D=
+"cm-variable">x</span>);
+<span class=3D"cm-comment">// =E2=86=92 the value of x is 30</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_p2JPaHsFdx" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_p2JPaHsFdx" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Though binding names cannot contain period characters, <code=
+>console.log</code> does have one. This is because <code>console.log</code>=
+ isn=E2=80=99t a simple binding. It is actually an expression that retrieve=
+s the <code>log</code> property from the value held by the <code>console</c=
+ode> binding. We=E2=80=99ll find out exactly what this means in <a href=3D"=
+https://eloquentjavascript.net/04_data.html#properties">Chapter 4</a>.</p>
+
+<h2 id=3D"return_values"><a class=3D"h_ident" id=3D"h_nULi9znEdr" href=3D"h=
+ttps://eloquentjavascript.net/02_program_structure.html#h_nULi9znEdr" tabin=
+dex=3D"-1" role=3D"presentation"></a>Return values</h2>
+
+<p><a class=3D"p_ident" id=3D"p_0E23g2pjSW" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_0E23g2pjSW" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Showing a dialog box or writing text to the screen is a <em>=
+side
+effect</em>. A lot of functions are useful because of the side effects they=
+ produce. Functions may also produce values, in which case they don=E2=80=
+=99t need to have a side effect to be useful. For example, the function <co=
+de>Math.max</code> takes any amount of number arguments and gives back the =
+greatest.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_PEuTYZX6NI" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_PEuTYZX6NI" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-variable">Math</span>.<span class=3D"cm-proper=
+ty">max</span>(<span class=3D"cm-number">2</span>, <span class=3D"cm-number=
+">4</span>));
+<span class=3D"cm-comment">// =E2=86=92 4</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_j9xxLwTmeJ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_j9xxLwTmeJ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When a function produces a value, it is said to <em>return</=
+em> that value. Anything that produces a value is an expression in JavaScri=
+pt, which means function calls can be used within larger expressions. Here =
+a call to <code>Math.min</code>, which is the opposite of <code>Math.max</c=
+ode>, is used as part of a plus expression:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_V4eUUr1Irj" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_V4eUUr1Irj" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-variable">Math</span>.<span class=3D"cm-proper=
+ty">min</span>(<span class=3D"cm-number">2</span>, <span class=3D"cm-number=
+">4</span>) <span class=3D"cm-operator">+</span> <span class=3D"cm-number">=
+100</span>);
+<span class=3D"cm-comment">// =E2=86=92 102</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_CCHmKjEO/A" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_CCHmKjEO/A" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <a href=3D"https://eloquentjavascript.net/03_functions.h=
+tml">next chapter</a> explains how to write your own functions.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_rDxYNPd65Z" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_rDxYNPd65Z" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Control flow</h2>
+
+<p><a class=3D"p_ident" id=3D"p_QdCrOXOgYy" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_QdCrOXOgYy" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When your program contains more than one statement, the stat=
+ements are executed as if they are a story, from top to bottom. This exampl=
+e program has two statements. The first one asks the user for a number, and=
+ the second, which is executed after the first, shows the square of that nu=
+mber.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_6hF1Rg3sJ/" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_6hF1Rg3sJ/" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">theNumber<=
+/span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-variable">N=
+umber</span>(<span class=3D"cm-variable">prompt</span>(<span class=3D"cm-st=
+ring">"Pick a number"</span>));
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-string">"Your number is the square root of "</span=
+> <span class=3D"cm-operator">+</span>
+            <span class=3D"cm-variable">theNumber</span> <span class=3D"cm-=
+operator">*</span> <span class=3D"cm-variable">theNumber</span>);</pre>
+
+<p><a class=3D"p_ident" id=3D"p_sRAFsk3Egv" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_sRAFsk3Egv" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The function <code>Number</code> converts a value to a numbe=
+r. We need that conversion because the result of <code>prompt</code> is a s=
+tring value, and we want a number. There are similar functions called <code=
+>String</code> and <code>Boolean</code> that convert values to those types.=
+</p>
+
+<p><a class=3D"p_ident" id=3D"p_/0ErLtUfJu" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_/0ErLtUfJu" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Here is the rather trivial schematic representation of strai=
+ght-line control flow:</p><figure><img src=3D"https://eloquentjavascript.ne=
+t/img/controlflow-straight.svg" alt=3D"Trivial control flow"></figure>
+
+<h2><a class=3D"h_ident" id=3D"h_wpz5oi2dy7" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_wpz5oi2dy7" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Conditional execution</h2>
+
+<p><a class=3D"p_ident" id=3D"p_vIB/f6fX22" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_vIB/f6fX22" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Not all programs are straight roads. We may, for example, wa=
+nt to create a branching road, where the program takes the proper branch ba=
+sed on the situation at hand. This is called <em>conditional
+execution</em>.</p><figure><img src=3D"https://eloquentjavascript.net/img/c=
+ontrolflow-if.svg" alt=3D"Conditional control flow"></figure>
+
+<p><a class=3D"p_ident" id=3D"p_+kdDcK9eLo" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_+kdDcK9eLo" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Conditional execution is created with the <code>if</code> ke=
+yword in JavaScript. In the simple case, we want some code to be executed i=
+f, and only if, a certain condition holds. We might, for example, want to s=
+how the square of the input only if the input is actually a number.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_D0zJWB8mO1" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_D0zJWB8mO1" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">theNumber<=
+/span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-variable">N=
+umber</span>(<span class=3D"cm-variable">prompt</span>(<span class=3D"cm-st=
+ring">"Pick a number"</span>));
+<span class=3D"cm-keyword">if</span> (<span class=3D"cm-operator">!</span><=
+span class=3D"cm-variable">Number</span>.<span class=3D"cm-property">isNaN<=
+/span>(<span class=3D"cm-variable">theNumber</span>)) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Your number is the square root of "</sp=
+an> <span class=3D"cm-operator">+</span>
+              <span class=3D"cm-variable">theNumber</span> <span class=3D"c=
+m-operator">*</span> <span class=3D"cm-variable">theNumber</span>);
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_mKMHRLufE5" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_mKMHRLufE5" tabindex=3D"-1" role=3D"pre=
+sentation"></a>With this modification, if you enter =E2=80=9Cparrot=E2=80=
+=9D, no output is shown.</p>
+
+<p><a class=3D"p_ident" id=3D"p_Z3lb25LMfG" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_Z3lb25LMfG" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>if</code> keyword executes or skips a statement de=
+pending on the value of a Boolean expression. The deciding expression is wr=
+itten after the keyword, between parentheses, followed by the statement to =
+execute.</p>
+
+<p><a class=3D"p_ident" id=3D"p_pG2wjXJ0HS" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_pG2wjXJ0HS" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>Number.isNaN</code> function is a standard JavaScr=
+ipt function that returns <code>true</code> only if the argument it is give=
+n is <code>NaN</code>. The <code>Number</code> function happens to return <=
+code>NaN</code> when you give it a string that doesn=E2=80=99t represent a =
+valid number. Thus, the condition translates to =E2=80=9Cunless <code>theNu=
+mber</code> is not-a-number, do this=E2=80=9D.</p>
+
+<p><a class=3D"p_ident" id=3D"p_it4hLyYIxE" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_it4hLyYIxE" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The statement after the <code>if</code> is wrapped in braces=
+ (<code>{</code> and <code>}</code>) in this example. The braces can be use=
+d to group any number of statements into a single statement, called a <em>b=
+lock</em>. You could also have omitted them in this case, since they hold o=
+nly a single statement, but to avoid having to think about whether they are=
+ needed, most JavaScript programmers use them in every wrapped statement li=
+ke this. We=E2=80=99ll mostly follow that convention in this book, except f=
+or the occasional one-liner.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_/Ndk5rqq2Z" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_/Ndk5rqq2Z" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">if</span> (<span class=3D"cm-number">1</span=
+> <span class=3D"cm-operator">+</span> <span class=3D"cm-number">1</span> <=
+span class=3D"cm-operator">=3D=3D</span> <span class=3D"cm-number">2</span>=
+) <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"It's true"</span>);
+<span class=3D"cm-comment">// =E2=86=92 It's true</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_nKal37wsBJ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_nKal37wsBJ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You often won=E2=80=99t just have code that executes when a =
+condition holds true, but also code that handles the other case. This alter=
+nate path is represented by the second arrow in the diagram. You can use th=
+e <code>else</code> keyword, together with <code>if</code>, to create two s=
+eparate, alternative execution paths.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_kLpqX2fnaC" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_kLpqX2fnaC" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">theNumber<=
+/span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-variable">N=
+umber</span>(<span class=3D"cm-variable">prompt</span>(<span class=3D"cm-st=
+ring">"Pick a number"</span>));
+<span class=3D"cm-keyword">if</span> (<span class=3D"cm-operator">!</span><=
+span class=3D"cm-variable">Number</span>.<span class=3D"cm-property">isNaN<=
+/span>(<span class=3D"cm-variable">theNumber</span>)) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Your number is the square root of "</sp=
+an> <span class=3D"cm-operator">+</span>
+              <span class=3D"cm-variable">theNumber</span> <span class=3D"c=
+m-operator">*</span> <span class=3D"cm-variable">theNumber</span>);
+} <span class=3D"cm-keyword">else</span> {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Hey. Why didn't you give me a number?"<=
+/span>);
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_AfMbm4fyrl" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_AfMbm4fyrl" tabindex=3D"-1" role=3D"pre=
+sentation"></a>If you have more than two paths to choose from, you can =E2=
+=80=9Cchain=E2=80=9D multiple <code>if</code>/<code>else</code> pairs toget=
+her. Here=E2=80=99s an example:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_QrvIive0zT" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_QrvIive0zT" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">num</span>=
+ <span class=3D"cm-operator">=3D</span> <span class=3D"cm-variable">Number<=
+/span>(<span class=3D"cm-variable">prompt</span>(<span class=3D"cm-string">=
+"Pick a number"</span>));
+
+<span class=3D"cm-keyword">if</span> (<span class=3D"cm-variable">num</span=
+> <span class=3D"cm-operator">&lt;</span> <span class=3D"cm-number">10</spa=
+n>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Small"</span>);
+} <span class=3D"cm-keyword">else</span> <span class=3D"cm-keyword">if</spa=
+n> (<span class=3D"cm-variable">num</span> <span class=3D"cm-operator">&lt;=
+</span> <span class=3D"cm-number">100</span>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Medium"</span>);
+} <span class=3D"cm-keyword">else</span> {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"Large"</span>);
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_6w2546HxbK" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_6w2546HxbK" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The program will first check whether <code>num</code> is les=
+s than 10. If it is, it chooses that branch, shows <code>"Small"</code>, an=
+d is done. If it isn=E2=80=99t, it takes the <code>else</code> branch, whic=
+h itself contains a second <code>if</code>. If the second condition (<code>=
+&lt; 100</code>) holds, that means the number is between 10 and 100, and <c=
+ode>"Medium"</code> is shown. If it doesn=E2=80=99t, the second and last <c=
+ode>else</code> branch is chosen.</p>
+
+<p><a class=3D"p_ident" id=3D"p_8cVBhHN8E8" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8cVBhHN8E8" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The schema for this program looks something like this:</p><f=
+igure><img src=3D"https://eloquentjavascript.net/img/controlflow-nested-if.=
+svg" alt=3D"Nested if control flow"></figure>
+
+<h2 id=3D"loops"><a class=3D"h_ident" id=3D"h_FaGGgUI+MM" href=3D"https://e=
+loquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM" tabindex=3D"-=
+1" role=3D"presentation"></a>while and do loops</h2>
+
+<p><a class=3D"p_ident" id=3D"p_FIHE6k56BA" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_FIHE6k56BA" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Consider a program that outputs all even numbers from 0 to 1=
+2. One way to write this is as follows:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_NiH5lbw9eg" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_NiH5lbw9eg" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-number">0</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">2</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">4</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">6</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">8</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">10</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-number">12</span>);</pre>
+
+<p><a class=3D"p_ident" id=3D"p_UADWQuBBKV" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_UADWQuBBKV" tabindex=3D"-1" role=3D"pre=
+sentation"></a>That works, but the idea of writing a program is to make som=
+ething <em>less</em> work, not more. If we needed all even numbers less tha=
+n 1,000, this approach would be unworkable. What we need is a way to run a =
+piece of code multiple times. This form of control flow is called a <em>loo=
+p</em>.</p><figure><img src=3D"https://eloquentjavascript.net/img/controlfl=
+ow-loop.svg" alt=3D"Loop control flow"></figure>
+
+<p><a class=3D"p_ident" id=3D"p_ucfK/O4tJA" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_ucfK/O4tJA" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Looping control flow allows us to go back to some point in t=
+he program where we were before and repeat it with our current program stat=
+e. If we combine this with a binding that counts, we can do something like =
+this:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_jMUfZIZChZ" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_jMUfZIZChZ" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">number</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">0</spa=
+n>;
+<span class=3D"cm-keyword">while</span> (<span class=3D"cm-variable">number=
+</span> <span class=3D"cm-operator">&lt;=3D</span> <span class=3D"cm-number=
+">12</span>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-variable">number</span>);
+  <span class=3D"cm-variable">number</span> <span class=3D"cm-operator">=3D=
+</span> <span class=3D"cm-variable">number</span> <span class=3D"cm-operato=
+r">+</span> <span class=3D"cm-number">2</span>;
+}
+<span class=3D"cm-comment">// =E2=86=92 0</span>
+<span class=3D"cm-comment">// =E2=86=92 2</span>
+<span class=3D"cm-comment">//   =E2=80=A6 etcetera</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_sQDC32i3eP" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_sQDC32i3eP" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A statement starting with the keyword <code>while</code> cre=
+ates a loop. The word <code>while</code> is followed by an expression in pa=
+rentheses and then a statement, much like <code>if</code>. The loop keeps e=
+ntering that statement as long as the expression produces a value that give=
+s <code>true</code> when converted to Boolean.</p>
+
+<p><a class=3D"p_ident" id=3D"p_fqT+6kyNIX" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_fqT+6kyNIX" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>number</code> binding demonstrates the way a bindi=
+ng can track the progress of a program. Every time the loop repeats, <code>=
+number</code> gets a value that is 2 more than its previous value. At the b=
+eginning of every repetition, it is compared with the number 12 to decide w=
+hether the program=E2=80=99s work is finished.</p>
+
+<p><a class=3D"p_ident" id=3D"p_9snSNKeii2" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_9snSNKeii2" tabindex=3D"-1" role=3D"pre=
+sentation"></a>As an example that actually does something useful, we can no=
+w write a program that calculates and shows the value of 2<sup>10</sup> (2 =
+to the 10th power). We use two bindings: one to keep track of our result an=
+d one to count how often we have multiplied this result by 2. The loop test=
+s whether the second binding has reached 10 yet and, if not, updates both b=
+indings.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_9AxUm9n4M9" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_9AxUm9n4M9" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">result</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">1</spa=
+n>;
+<span class=3D"cm-keyword">let</span> <span class=3D"cm-def">counter</span>=
+ <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">0</span>;
+<span class=3D"cm-keyword">while</span> (<span class=3D"cm-variable">counte=
+r</span> <span class=3D"cm-operator">&lt;</span> <span class=3D"cm-number">=
+10</span>) {
+  <span class=3D"cm-variable">result</span> <span class=3D"cm-operator">=3D=
+</span> <span class=3D"cm-variable">result</span> <span class=3D"cm-operato=
+r">*</span> <span class=3D"cm-number">2</span>;
+  <span class=3D"cm-variable">counter</span> <span class=3D"cm-operator">=
+=3D</span> <span class=3D"cm-variable">counter</span> <span class=3D"cm-ope=
+rator">+</span> <span class=3D"cm-number">1</span>;
+}
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">result</span>);
+<span class=3D"cm-comment">// =E2=86=92 1024</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_MOu+A32W3I" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_MOu+A32W3I" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The counter could also have started at <code>1</code> and ch=
+ecked for <code>&lt;=3D 10</code>, but for reasons that will become apparen=
+t in <a href=3D"https://eloquentjavascript.net/04_data.html#array_indexing"=
+>Chapter 4</a>, it is a good idea to get used to counting from 0.</p>
+
+<p><a class=3D"p_ident" id=3D"p_8uW9Q8jl2Q" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8uW9Q8jl2Q" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A <code>do</code> loop is a control structure similar to a <=
+code>while</code> loop. It differs only on one point: a <code>do</code> loo=
+p always executes its body at least once, and it starts testing whether it =
+should stop only after that first execution. To reflect this, the test appe=
+ars after the body of the loop.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_Rdlc+hwgyM" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_Rdlc+hwgyM" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">yourName</=
+span>;
+<span class=3D"cm-keyword">do</span> {
+  <span class=3D"cm-variable">yourName</span> <span class=3D"cm-operator">=
+=3D</span> <span class=3D"cm-variable">prompt</span>(<span class=3D"cm-stri=
+ng">"Who are you?"</span>);
+} <span class=3D"cm-keyword">while</span> (<span class=3D"cm-operator">!</s=
+pan><span class=3D"cm-variable">yourName</span>);
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">yourName</span>);</pre>
+
+<p><a class=3D"p_ident" id=3D"p_1kqspDALxr" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_1kqspDALxr" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This program will force you to enter a name. It will ask aga=
+in and again until it gets something that is not an empty string. Applying =
+the <code>!</code> operator will convert a value to Boolean type before neg=
+ating it, and all strings except <code>""</code> convert to <code>true</cod=
+e>. This means the loop continues going round until you provide a non-empty=
+ name.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_3I0M2f1Cmh" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_3I0M2f1Cmh" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Indenting Code</h2>
+
+<p><a class=3D"p_ident" id=3D"p_IKFiLJvotP" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_IKFiLJvotP" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In the examples, I=E2=80=99ve been adding spaces in front of=
+ statements that are part of some larger statement. These spaces are not re=
+quired=E2=80=94the computer will accept the program just fine without them.=
+ In fact, even the line breaks in programs are optional. You could write a =
+program as a single long line if you felt like it.</p>
+
+<p><a class=3D"p_ident" id=3D"p_IUZYH0xDM+" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_IUZYH0xDM+" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The role of this indentation inside blocks is to make the st=
+ructure of the code stand out. In code where new blocks are opened inside o=
+ther blocks, it can become hard to see where one block ends and another beg=
+ins. With proper indentation, the visual shape of a program corresponds to =
+the shape of the blocks inside it. I like to use two spaces for every open =
+block, but tastes differ=E2=80=94some people use four spaces, and some peop=
+le use tab characters. The important thing is that each new block adds the =
+same amount of space.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_Dmd8L2VV0d" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_Dmd8L2VV0d" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">if</span> (<span class=3D"cm-atom">false</sp=
+an> <span class=3D"cm-operator">!=3D</span> <span class=3D"cm-atom">true</s=
+pan>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-string">"That makes sense."</span>);
+  <span class=3D"cm-keyword">if</span> (<span class=3D"cm-number">1</span> =
+<span class=3D"cm-operator">&lt;</span> <span class=3D"cm-number">2</span>)=
+ {
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-string">"No surprise there."</span>);
+  }
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_mXrl608k46" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_mXrl608k46" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Most code editor programs (including the one in this book) w=
+ill help by automatically indenting new lines the proper amount.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_oupMC+5FKN" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_oupMC+5FKN" tabindex=3D"-1" role=3D"pr=
+esentation"></a>for loops</h2>
+
+<p><a class=3D"p_ident" id=3D"p_t55fBgZ9ww" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_t55fBgZ9ww" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Many loops follow the pattern shown in the <code>while</code=
+> examples. First a =E2=80=9Ccounter=E2=80=9D binding is created to track t=
+he progress of the loop. Then comes a <code>while</code> loop, usually with=
+ a test expression that checks whether the counter has reached its end valu=
+e. At the end of the loop body, the counter is updated to track progress.</=
+p>
+
+<p><a class=3D"p_ident" id=3D"p_M1Sq5VUbFv" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_M1Sq5VUbFv" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Because this pattern is so common, JavaScript and similar la=
+nguages provide a slightly shorter and more comprehensive form, the <code>f=
+or</code> loop.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_bv526eAQ8J" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_bv526eAQ8J" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">for</span> (<span class=3D"cm-keyword">let</=
+span> <span class=3D"cm-def">number</span> <span class=3D"cm-operator">=3D<=
+/span> <span class=3D"cm-number">0</span>; <span class=3D"cm-variable">numb=
+er</span> <span class=3D"cm-operator">&lt;=3D</span> <span class=3D"cm-numb=
+er">12</span>; <span class=3D"cm-variable">number</span> <span class=3D"cm-=
+operator">=3D</span> <span class=3D"cm-variable">number</span> <span class=
+=3D"cm-operator">+</span> <span class=3D"cm-number">2</span>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-variable">number</span>);
+}
+<span class=3D"cm-comment">// =E2=86=92 0</span>
+<span class=3D"cm-comment">// =E2=86=92 2</span>
+<span class=3D"cm-comment">//   =E2=80=A6 etcetera</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_2z5HmSaT1g" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_2z5HmSaT1g" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This program is exactly equivalent to the <a href=3D"https:/=
+/eloquentjavascript.net/02_program_structure.html#loops">earlier</a> even-n=
+umber-printing example. The only change is that all the statements that are=
+ related to the =E2=80=9Cstate=E2=80=9D of the loop are grouped together af=
+ter <code>for</code>.</p>
+
+<p><a class=3D"p_ident" id=3D"p_8ou5wZ2rOs" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8ou5wZ2rOs" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The parentheses after a <code>for</code> keyword must contai=
+n two semicolons. The part before the first semicolon <em>initializes</em> =
+the loop, usually by defining a binding. The second part is the expression =
+that <em>checks</em> whether the loop must continue. The final part <em>upd=
+ates</em> the state of the loop after every iteration. In most cases, this =
+is shorter and clearer than a <code>while</code> construct.</p>
+
+<p><a class=3D"p_ident" id=3D"p_p2UzPdhGGE" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_p2UzPdhGGE" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This is the code that computes 2<sup>10</sup> using <code>fo=
+r</code> instead of <code>while</code>:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_BPd5Bl+eyt" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_BPd5Bl+eyt" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">result</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">1</spa=
+n>;
+<span class=3D"cm-keyword">for</span> (<span class=3D"cm-keyword">let</span=
+> <span class=3D"cm-def">counter</span> <span class=3D"cm-operator">=3D</sp=
+an> <span class=3D"cm-number">0</span>; <span class=3D"cm-variable">counter=
+</span> <span class=3D"cm-operator">&lt;</span> <span class=3D"cm-number">1=
+0</span>; <span class=3D"cm-variable">counter</span> <span class=3D"cm-oper=
+ator">=3D</span> <span class=3D"cm-variable">counter</span> <span class=3D"=
+cm-operator">+</span> <span class=3D"cm-number">1</span>) {
+  <span class=3D"cm-variable">result</span> <span class=3D"cm-operator">=3D=
+</span> <span class=3D"cm-variable">result</span> <span class=3D"cm-operato=
+r">*</span> <span class=3D"cm-number">2</span>;
+}
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">result</span>);
+<span class=3D"cm-comment">// =E2=86=92 1024</span></pre>
+
+<h2><a class=3D"h_ident" id=3D"h_WWKAoSPJ47" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_WWKAoSPJ47" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Breaking Out of a Loop</h2>
+
+<p><a class=3D"p_ident" id=3D"p_+WELdc0naE" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_+WELdc0naE" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Having the looping condition produce <code>false</code> is n=
+ot the only way a loop can finish. There is a special statement called <cod=
+e>break</code> that has the effect of immediately jumping out of the enclos=
+ing loop.</p>
+
+<p><a class=3D"p_ident" id=3D"p_Vnm45Nv5hS" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_Vnm45Nv5hS" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This program illustrates the <code>break</code> statement. I=
+t finds the first number that is both greater than or equal to 20 and divis=
+ible by 7.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_G/xQzCJ2hv" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_G/xQzCJ2hv" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">for</span> (<span class=3D"cm-keyword">let</=
+span> <span class=3D"cm-def">current</span> <span class=3D"cm-operator">=3D=
+</span> <span class=3D"cm-number">20</span>; ; <span class=3D"cm-variable">=
+current</span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-var=
+iable">current</span> <span class=3D"cm-operator">+</span> <span class=3D"c=
+m-number">1</span>) {
+  <span class=3D"cm-keyword">if</span> (<span class=3D"cm-variable">current=
+</span> <span class=3D"cm-operator">%</span> <span class=3D"cm-number">7</s=
+pan> <span class=3D"cm-operator">=3D=3D</span> <span class=3D"cm-number">0<=
+/span>) {
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-variable">current</span>);
+    <span class=3D"cm-keyword">break</span>;
+  }
+}
+<span class=3D"cm-comment">// =E2=86=92 21</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_6KpM9sBZ2r" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_6KpM9sBZ2r" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Using the remainder (<code>%</code>) operator is an easy way=
+ to test whether a number is divisible by another number. If it is, the rem=
+ainder of their division is zero.</p>
+
+<p><a class=3D"p_ident" id=3D"p_xKPyWJdErp" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_xKPyWJdErp" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>for</code> construct in the example does not have =
+a part that checks for the end of the loop. This means that the loop will n=
+ever stop unless the <code>break</code> statement inside is executed.</p>
+
+<p><a class=3D"p_ident" id=3D"p_2mGltrXORo" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_2mGltrXORo" tabindex=3D"-1" role=3D"pre=
+sentation"></a>If you were to remove that <code>break</code> statement or y=
+ou accidentally write an end condition that always produces <code>true</cod=
+e>, your program would get stuck in an <em>infinite loop</em>. A program st=
+uck in an infinite loop will never finish running, which is usually a bad t=
+hing.</p>
+
+<p><a class=3D"p_ident" id=3D"p_Q8rVWjQRRl" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_Q8rVWjQRRl" tabindex=3D"-1" role=3D"pre=
+sentation"></a>If you create an infinite loop in one of the examples on the=
+se pages, you=E2=80=99ll usually be asked whether you want to stop the scri=
+pt after a few seconds. If that fails, you will have to close the tab that =
+you=E2=80=99re working in, or on some browsers close your whole browser, to=
+ recover.</p>
+
+<p><a class=3D"p_ident" id=3D"p_3ZS4iIPVud" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_3ZS4iIPVud" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The <code>continue</code> keyword is similar to <code>break<=
+/code>, in that it influences the progress of a loop. When <code>continue</=
+code> is encountered in a loop body, control jumps out of the body and cont=
+inues with the loop=E2=80=99s next iteration.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_1JSoOGP+6B" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_1JSoOGP+6B" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Updating bindings succinctly</h2>
+
+<p><a class=3D"p_ident" id=3D"p_OFpXvgvhIR" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_OFpXvgvhIR" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Especially when looping, a program often needs to =E2=80=9Cu=
+pdate=E2=80=9D a binding to hold a value based on that binding=E2=80=99s pr=
+evious value.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_aegdj8V5XM" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_aegdj8V5XM" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">counter</span> <span class=3D"cm-operator">=
+=3D</span> <span class=3D"cm-variable">counter</span> <span class=3D"cm-ope=
+rator">+</span> <span class=3D"cm-number">1</span>;</pre>
+
+<p><a class=3D"p_ident" id=3D"p_n9PMtWEgzN" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_n9PMtWEgzN" tabindex=3D"-1" role=3D"pre=
+sentation"></a>JavaScript provides a shortcut for this.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_/XU8FyoU4+" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_/XU8FyoU4+" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-variable">counter</span> <span class=3D"cm-operator">=
++=3D</span> <span class=3D"cm-number">1</span>;</pre>
+
+<p><a class=3D"p_ident" id=3D"p_3IlWnnMlMo" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_3IlWnnMlMo" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Similar shortcuts work for many other operators, such as <co=
+de>result *=3D 2</code> to double <code>result</code> or <code>counter -=3D=
+ 1</code> to count downward.</p>
+
+<p><a class=3D"p_ident" id=3D"p_+odXBLNKvV" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_+odXBLNKvV" tabindex=3D"-1" role=3D"pre=
+sentation"></a>This allows us to shorten our counting example a little more=
+.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_h8HkwMM+IM" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_h8HkwMM+IM" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">for</span> (<span class=3D"cm-keyword">let</=
+span> <span class=3D"cm-def">number</span> <span class=3D"cm-operator">=3D<=
+/span> <span class=3D"cm-number">0</span>; <span class=3D"cm-variable">numb=
+er</span> <span class=3D"cm-operator">&lt;=3D</span> <span class=3D"cm-numb=
+er">12</span>; <span class=3D"cm-variable">number</span> <span class=3D"cm-=
+operator">+=3D</span> <span class=3D"cm-number">2</span>) {
+  <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">lo=
+g</span>(<span class=3D"cm-variable">number</span>);
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_D/8ovOfd2v" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_D/8ovOfd2v" tabindex=3D"-1" role=3D"pre=
+sentation"></a>For <code>counter +=3D 1</code> and <code>counter -=3D 1</co=
+de>, there are even shorter equivalents: <code>counter++</code> and <code>c=
+ounter--</code>.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_jMKsa0SXdL" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_jMKsa0SXdL" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Dispatching on a value with switch</h2>
+
+<p><a class=3D"p_ident" id=3D"p_not5JaXWWV" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_not5JaXWWV" tabindex=3D"-1" role=3D"pre=
+sentation"></a>It is not uncommon for code to look like this:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_Q96dt8DAU9" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_Q96dt8DAU9" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">if</span> (<span class=3D"cm-variable">x</sp=
+an> <span class=3D"cm-operator">=3D=3D</span> <span class=3D"cm-string">"va=
+lue1"</span>) <span class=3D"cm-variable">action1</span>();
+<span class=3D"cm-keyword">else</span> <span class=3D"cm-keyword">if</span>=
+ (<span class=3D"cm-variable">x</span> <span class=3D"cm-operator">=3D=3D</=
+span> <span class=3D"cm-string">"value2"</span>) <span class=3D"cm-variable=
+">action2</span>();
+<span class=3D"cm-keyword">else</span> <span class=3D"cm-keyword">if</span>=
+ (<span class=3D"cm-variable">x</span> <span class=3D"cm-operator">=3D=3D</=
+span> <span class=3D"cm-string">"value3"</span>) <span class=3D"cm-variable=
+">action3</span>();
+<span class=3D"cm-keyword">else</span> <span class=3D"cm-variable">defaultA=
+ction</span>();</pre>
+
+<p><a class=3D"p_ident" id=3D"p_NAtglzdIez" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_NAtglzdIez" tabindex=3D"-1" role=3D"pre=
+sentation"></a>There is a construct called <code>switch</code> that is inte=
+nded to express such a =E2=80=9Cdispatch=E2=80=9D in a more direct way. Unf=
+ortunately, the syntax JavaScript uses for this (which it inherited from th=
+e C/Java line of programming languages) is somewhat awkward=E2=80=94a chain=
+ of <code>if</code> statements may look better. Here is an example:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_B7WAWZEgcU" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_B7WAWZEgcU" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">switch</span> (<span class=3D"cm-variable">p=
+rompt</span>(<span class=3D"cm-string">"What is the weather like?"</span>))=
+ {
+  <span class=3D"cm-keyword">case</span> <span class=3D"cm-string">"rainy"<=
+/span>:
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-string">"Remember to bring an umbrella."</span=
+>);
+    <span class=3D"cm-keyword">break</span>;
+  <span class=3D"cm-keyword">case</span> <span class=3D"cm-string">"sunny"<=
+/span>:
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-string">"Dress lightly."</span>);
+  <span class=3D"cm-keyword">case</span> <span class=3D"cm-string">"cloudy"=
+</span>:
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-string">"Go outside."</span>);
+    <span class=3D"cm-keyword">break</span>;
+  <span class=3D"cm-keyword">default</span>:
+    <span class=3D"cm-variable">console</span>.<span class=3D"cm-property">=
+log</span>(<span class=3D"cm-string">"Unknown weather type!"</span>);
+    <span class=3D"cm-keyword">break</span>;
+}</pre>
+
+<p><a class=3D"p_ident" id=3D"p_zor9W4ZIH6" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_zor9W4ZIH6" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You may put any number of <code>case</code> labels inside th=
+e block opened by <code>switch</code>. The program will start executing at =
+the label that corresponds to the value that <code>switch</code> was given,=
+ or at <code>default</code> if no matching value is found. It will continue=
+ executing, even across other labels, until it reaches a <code>break</code>=
+ statement. In some cases, such as the <code>"sunny"</code> case in the exa=
+mple, this can be used to share some code between cases (it recommends goin=
+g outside for both sunny and cloudy weather). But be careful=E2=80=94it is =
+easy to forget such a <code>break</code>, which will cause the program to e=
+xecute code you do not want executed.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_t54vuASjLD" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_t54vuASjLD" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Capitalization</h2>
+
+<p><a class=3D"p_ident" id=3D"p_0nbunST7FL" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_0nbunST7FL" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Binding names may not contain spaces, yet it is often helpfu=
+l to use multiple words to clearly describe what the binding represents. Th=
+ese are pretty much your choices for writing a binding name with several wo=
+rds in it:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"null"><a class=3D"c_id=
+ent" id=3D"c_HtUFwP9TF9" href=3D"https://eloquentjavascript.net/02_program_=
+structure.html#c_HtUFwP9TF9" tabindex=3D"-1" role=3D"presentation"></a>fuzz=
+ylittleturtle
+fuzzy_little_turtle
+FuzzyLittleTurtle
+fuzzyLittleTurtle</pre>
+
+<p><a class=3D"p_ident" id=3D"p_GveY0yoCxZ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_GveY0yoCxZ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The first style can be hard to read. I rather like the look =
+of the underscores, though that style is a little painful to type. The stan=
+dard JavaScript functions, and most JavaScript programmers, follow the bott=
+om style=E2=80=94they capitalize every word except the first. It is not har=
+d to get used to little things like that, and code with mixed naming styles=
+ can be jarring to read, so we follow this convention.</p>
+
+<p><a class=3D"p_ident" id=3D"p_zMlRK/pymj" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_zMlRK/pymj" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In a few cases, such as the <code>Number</code> function, th=
+e first letter of a binding is also capitalized. This was done to mark this=
+ function as a constructor. What a constructor is will become clear in <a h=
+ref=3D"https://eloquentjavascript.net/06_object.html#constructors">Chapter =
+6</a>. For now, the important thing is not to be bothered by this apparent =
+lack of consistency.</p>
+
+<h2><a class=3D"h_ident" id=3D"h_/OBuIOX390" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_/OBuIOX390" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Comments</h2>
+
+<p><a class=3D"p_ident" id=3D"p_0/Ms9AYRwI" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_0/Ms9AYRwI" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Often, raw code does not convey all the information you want=
+ a program to convey to human readers, or it conveys it in such a cryptic w=
+ay that people might not understand it. At other times, you might just want=
+ to include some related thoughts as part of your program. This is what <em=
+>comments</em> are for.</p>
+
+<p><a class=3D"p_ident" id=3D"p_c5N0ebF2ts" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_c5N0ebF2ts" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A comment is a piece of text that is part of a program but i=
+s completely ignored by the computer. JavaScript has two ways of writing co=
+mments. To write a single-line comment, you can use two slash characters (<=
+code>//</code>) and then the comment text after it.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_/8e+JeWltg" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_/8e+JeWltg" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">accountBal=
+ance</span> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-variab=
+le">calculateBalance</span>(<span class=3D"cm-variable">account</span>);
+<span class=3D"cm-comment">// It's a green hollow where a river sings</span=
+>
+<span class=3D"cm-variable">accountBalance</span>.<span class=3D"cm-propert=
+y">adjust</span>();
+<span class=3D"cm-comment">// Madly catching white tatters in the grass.</s=
+pan>
+<span class=3D"cm-keyword">let</span> <span class=3D"cm-def">report</span> =
+<span class=3D"cm-operator">=3D</span> <span class=3D"cm-keyword">new</span=
+> <span class=3D"cm-variable">Report</span>();
+<span class=3D"cm-comment">// Where the sun on the proud mountain rings:</s=
+pan>
+<span class=3D"cm-variable">addToReport</span>(<span class=3D"cm-variable">=
+accountBalance</span>, <span class=3D"cm-variable">report</span>);
+<span class=3D"cm-comment">// It's a little valley, foaming like light in a=
+ glass.</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_UD6DcJKN/S" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_UD6DcJKN/S" tabindex=3D"-1" role=3D"pre=
+sentation"></a>A <code>//</code> comment goes only to the end of the line. =
+A section of text between <code>/*</code> and <code>*/</code> will be ignor=
+ed in its entirety, regardless of whether it contains line breaks. This is =
+useful for adding blocks of information about a file or a chunk of program.=
+</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_mreOdwa/5Y" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_mreOdwa/5Y" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-comment">/*</span>
+<span class=3D"cm-comment">  I first found this number scrawled on the back=
+ of an old notebook.</span>
+<span class=3D"cm-comment">  Since then, it has often dropped by, showing u=
+p in phone numbers</span>
+<span class=3D"cm-comment">  and the serial numbers of products that I've b=
+ought. It obviously</span>
+<span class=3D"cm-comment">  likes me, so I've decided to keep it.</span>
+<span class=3D"cm-comment">*/</span>
+<span class=3D"cm-keyword">const</span> <span class=3D"cm-def">myNumber</sp=
+an> <span class=3D"cm-operator">=3D</span> <span class=3D"cm-number">11213<=
+/span>;</pre>
+
+<h2><a class=3D"h_ident" id=3D"h_ErccPg/l98" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_ErccPg/l98" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Summary</h2>
+
+<p><a class=3D"p_ident" id=3D"p_0stpnGAHEr" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_0stpnGAHEr" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You now know that a program is built out of statements, whic=
+h themselves sometimes contain more statements. Statements tend to contain =
+expressions, which themselves can be built out of smaller expressions.</p>
+
+<p><a class=3D"p_ident" id=3D"p_SBCUzJDpIP" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_SBCUzJDpIP" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Putting statements after one another gives you a program tha=
+t is executed from top to bottom. You can introduce disturbances in the flo=
+w of control by using conditional (<code>if</code>, <code>else</code>, and =
+<code>switch</code>) and looping (<code>while</code>, <code>do</code>, and =
+<code>for</code>) statements.</p>
+
+<p><a class=3D"p_ident" id=3D"p_eHusD1GvV0" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_eHusD1GvV0" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Bindings can be used to file pieces of data under a name, an=
+d they are useful for tracking state in your program. The environment is th=
+e set of bindings that are defined. JavaScript systems always put a number =
+of useful standard bindings into your environment.</p>
+
+<p><a class=3D"p_ident" id=3D"p_zgNEy0za9M" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_zgNEy0za9M" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Functions are special values that encapsulate a piece of pro=
+gram. You can invoke them by writing <code>functionName(argument1, argument=
+2)</code>. Such a function call is an expression and may produce a value.</=
+p>
+
+<h2><a class=3D"h_ident" id=3D"h_TcUD2vzyMe" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#h_TcUD2vzyMe" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Exercises</h2>
+
+<p><a class=3D"p_ident" id=3D"p_QuFLn+G9+D" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_QuFLn+G9+D" tabindex=3D"-1" role=3D"pre=
+sentation"></a>If you are unsure how to test your solutions to the exercise=
+s, refer to the <a href=3D"https://eloquentjavascript.net/00_intro.html">In=
+troduction</a>.</p>
+
+<p><a class=3D"p_ident" id=3D"p_INe++TKn91" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_INe++TKn91" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Each exercise starts with a problem description. Read this d=
+escription and try to solve the exercise. If you run into problems, conside=
+r reading the hints after the exercise. Full solutions to the exercises are=
+ not included in this book, but you can find them online at <a href=3D"http=
+s://eloquentjavascript.net/code#2"><em>https://eloquentjavascript.net/code<=
+/em></a>. If you want to learn something from the exercises, I recommend lo=
+oking at the solutions only after you=E2=80=99ve solved the exercise, or at=
+ least after you=E2=80=99ve attacked it long and hard enough to have a slig=
+ht headache.</p>
+
+<h3><a class=3D"i_ident" id=3D"i_umoXp9u0e7" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#i_umoXp9u0e7" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Looping a triangle</h3>
+
+<p><a class=3D"p_ident" id=3D"p_8imTrZ34w1" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8imTrZ34w1" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Write a loop that makes seven calls to <code>console.log</co=
+de> to output the following triangle:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"null"><a class=3D"c_id=
+ent" id=3D"c_iAdOqXrnTq" href=3D"https://eloquentjavascript.net/02_program_=
+structure.html#c_iAdOqXrnTq" tabindex=3D"-1" role=3D"presentation"></a>#
+##
+###
+####
+#####
+######
+#######</pre>
+
+<p><a class=3D"p_ident" id=3D"p_2gwFh5J631" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_2gwFh5J631" tabindex=3D"-1" role=3D"pre=
+sentation"></a>It may be useful to know that you can find the length of a s=
+tring by writing <code>.length</code> after it.</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_qHvXAGuPvV" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_qHvXAGuPvV" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-keyword">let</span> <span class=3D"cm-def">abc</span>=
+ <span class=3D"cm-operator">=3D</span> <span class=3D"cm-string">"abc"</sp=
+an>;
+<span class=3D"cm-variable">console</span>.<span class=3D"cm-property">log<=
+/span>(<span class=3D"cm-variable">abc</span>.<span class=3D"cm-property">l=
+ength</span>);
+<span class=3D"cm-comment">// =E2=86=92 3</span></pre>
+
+<p><a class=3D"p_ident" id=3D"p_hzLkQ7lBb5" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_hzLkQ7lBb5" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Most exercises contain a piece of code that you can modify t=
+o solve the exercise. Remember that you can click code blocks to edit them.=
+</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_HRKSrZS1tJ" href=3D"https://eloquentjavascript.net/02_=
+program_structure.html#c_HRKSrZS1tJ" tabindex=3D"-1" role=3D"presentation">=
+</a><span class=3D"cm-comment">// Your code here.</span></pre>
+
+<div class=3D"solution"><div class=3D"solution-text">
+
+<p><a class=3D"p_ident" id=3D"p_4G9czVhC4S" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_4G9czVhC4S" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You can start with a program that prints out the numbers 1 t=
+o 7, which you can derive by making a few modifications to the <a href=3D"h=
+ttps://eloquentjavascript.net/02_program_structure.html#loops">even number =
+printing example</a> given earlier in the chapter, where the <code>for</cod=
+e> loop was introduced.</p>
+
+<p><a class=3D"p_ident" id=3D"p_Cfhk1uLlnS" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_Cfhk1uLlnS" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Now consider the equivalence between numbers and strings of =
+hash characters. You can go from 1 to 2 by adding 1 (<code>+=3D 1</code>). =
+You can go from <code>"#"</code> to <code>"##"</code> by adding a character=
+ (<code>+=3D "#"</code>). Thus, your solution can closely follow the number=
+-printing program.</p>
+
+</div></div>
+
+<h3><a class=3D"i_ident" id=3D"i_rebKE3gdjV" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#i_rebKE3gdjV" tabindex=3D"-1" role=3D"pr=
+esentation"></a>FizzBuzz</h3>
+
+<p><a class=3D"p_ident" id=3D"p_rwAdlrRyQP" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_rwAdlrRyQP" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Write a program that uses <code>console.log</code> to print =
+all the numbers from 1 to 100, with two exceptions. For numbers divisible b=
+y 3, print <code>"Fizz"</code> instead of the number, and for numbers divis=
+ible by 5 (and not 3), print <code>"Buzz"</code> instead.</p>
+
+<p><a class=3D"p_ident" id=3D"p_fJ/4Bt0n0A" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_fJ/4Bt0n0A" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When you have that working, modify your program to print <co=
+de>"FizzBuzz"</code> for numbers that are divisible by both 3 and 5 (and st=
+ill print <code>"Fizz"</code> or <code>"Buzz"</code> for numbers divisible =
+by only one of those).</p>
+
+<p><a class=3D"p_ident" id=3D"p_ka7uWqFA4z" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_ka7uWqFA4z" tabindex=3D"-1" role=3D"pre=
+sentation"></a>(This is actually an interview question that has been claime=
+d to weed out a significant percentage of programmer candidates. So if you =
+solved it, your labor market value just went up.)</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_HRKSrZS1tJ_1" href=3D"https://eloquentjavascript.net/0=
+2_program_structure.html#c_HRKSrZS1tJ_1" tabindex=3D"-1" role=3D"presentati=
+on"></a><span class=3D"cm-comment">// Your code here.</span></pre>
+
+<div class=3D"solution"><div class=3D"solution-text">
+
+<p><a class=3D"p_ident" id=3D"p_eChcRqNQtZ" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_eChcRqNQtZ" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Going over the numbers is clearly a looping job, and selecti=
+ng what to print is a matter of conditional execution. Remember the trick o=
+f using the remainder (<code>%</code>) operator for checking whether a numb=
+er is divisible by another number (has a remainder of zero).</p>
+
+<p><a class=3D"p_ident" id=3D"p_rCF2gb77FE" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_rCF2gb77FE" tabindex=3D"-1" role=3D"pre=
+sentation"></a>In the first version, there are three possible outcomes for =
+every number, so you=E2=80=99ll have to create an <code>if</code>/<code>els=
+e if</code>/<code>else</code> chain.</p>
+
+<p><a class=3D"p_ident" id=3D"p_dLVqJpXONX" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_dLVqJpXONX" tabindex=3D"-1" role=3D"pre=
+sentation"></a>The second version of the program has a straightforward solu=
+tion and a clever one. The simple solution is to add another conditional =
+=E2=80=9Cbranch=E2=80=9D to precisely test the given condition. For the cle=
+ver solution, build up a string containing the word or words to output and =
+print either this word or the number if there is no word, potentially by ma=
+king good use of the <code>||</code> operator.</p>
+
+</div></div>
+
+<h3><a class=3D"i_ident" id=3D"i_swb9JBtSQQ" href=3D"https://eloquentjavasc=
+ript.net/02_program_structure.html#i_swb9JBtSQQ" tabindex=3D"-1" role=3D"pr=
+esentation"></a>Chessboard</h3>
+
+<p><a class=3D"p_ident" id=3D"p_1pkxSCSkVg" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_1pkxSCSkVg" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Write a program that creates a string that represents an 8=
+=C3=978 grid, using newline characters to separate lines. At each position =
+of the grid there is either a space or a "#" character. The characters shou=
+ld form a chessboard.</p>
+
+<p><a class=3D"p_ident" id=3D"p_9kgrie1A2f" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_9kgrie1A2f" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Passing this string to <code>console.log</code> should show =
+something like this:</p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"null"><a class=3D"c_id=
+ent" id=3D"c_7yVx5TrcJ/" href=3D"https://eloquentjavascript.net/02_program_=
+structure.html#c_7yVx5TrcJ/" tabindex=3D"-1" role=3D"presentation"></a> # #=
+ # #
+# # # #=20
+ # # # #
+# # # #=20
+ # # # #
+# # # #=20
+ # # # #
+# # # #</pre>
+
+<p><a class=3D"p_ident" id=3D"p_8n1E0bRGiW" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_8n1E0bRGiW" tabindex=3D"-1" role=3D"pre=
+sentation"></a>When you have a program that generates this pattern, define =
+a binding <code>size =3D 8</code> and change the program so that it works f=
+or any <code>size</code>, outputting a grid of the given width and height.<=
+/p>
+
+<pre class=3D"snippet cm-s-default" data-language=3D"javascript"><a class=
+=3D"c_ident" id=3D"c_HRKSrZS1tJ_2" href=3D"https://eloquentjavascript.net/0=
+2_program_structure.html#c_HRKSrZS1tJ_2" tabindex=3D"-1" role=3D"presentati=
+on"></a><span class=3D"cm-comment">// Your code here.</span></pre>
+
+<div class=3D"solution"><div class=3D"solution-text">
+
+<p><a class=3D"p_ident" id=3D"p_4RO84Y6SdY" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_4RO84Y6SdY" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You can build the string by starting with an empty one (<cod=
+e>""</code>) and repeatedly adding characters. A newline character is writt=
+en <code>"\n"</code>.</p>
+
+<p><a class=3D"p_ident" id=3D"p_IhsfdKcMVG" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_IhsfdKcMVG" tabindex=3D"-1" role=3D"pre=
+sentation"></a>To work with two dimensions, you will need a loop inside of =
+a loop. Put braces around the bodies of both loops to make it easy to see w=
+here they start and end. Try to properly indent these bodies. The order of =
+the loops must follow the order in which we build up the string (line by li=
+ne, left to right, top to bottom). So the outer loop handles the lines, and=
+ the inner loop handles the characters on a line.</p>
+
+<p><a class=3D"p_ident" id=3D"p_hVwpRGFzkm" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_hVwpRGFzkm" tabindex=3D"-1" role=3D"pre=
+sentation"></a>You=E2=80=99ll need two bindings to track your progress. To =
+know whether to put a space or a hash sign at a given position, you could t=
+est whether the sum of the two counters is even (<code>% 2</code>).</p>
+
+<p><a class=3D"p_ident" id=3D"p_9FaUCRZviB" href=3D"https://eloquentjavascr=
+ipt.net/02_program_structure.html#p_9FaUCRZviB" tabindex=3D"-1" role=3D"pre=
+sentation"></a>Terminating a line by adding a newline character must happen=
+ after the line has been built up, so do this after the inner loop but insi=
+de the outer loop.</p>
+
+</div></div><nav><a href=3D"https://eloquentjavascript.net/01_values.html" =
+title=3D"previous chapter">=E2=97=80</a>&nbsp;<a href=3D"https://eloquentja=
+vascript.net/index.html" title=3D"cover">=E2=97=86</a>&nbsp;<a href=3D"http=
+s://eloquentjavascript.net/03_functions.html" title=3D"next chapter">=E2=96=
+=B6</a></nav>
+</article>
+<iframe src=3D"cid:frame-B0A930B6DA2A463030654F27CD46C0D4@mhtml.blink" styl=
+e=3D"display: none;"></iframe></body></html>
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/js/node_modules/codemirror/lib/codemirror.css
+
+@charset "utf-8";
+
+.CodeMirror { font-family: monospace; height: 300px; color: black; directio=
+n: ltr; }
+
+.CodeMirror-lines { padding: 4px 0px; }
+
+.CodeMirror pre { padding: 0px 4px; }
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler { background-color:=
+ white; }
+
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); backgroun=
+d-color: rgb(247, 247, 247); white-space: nowrap; }
+
+.CodeMirror-linenumbers { }
+
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; min-width: 20px; text-al=
+ign: right; color: rgb(153, 153, 153); white-space: nowrap; }
+
+.CodeMirror-guttermarker { color: black; }
+
+.CodeMirror-guttermarker-subtle { color: rgb(153, 153, 153); }
+
+.CodeMirror-cursor { border-left: 1px solid black; border-right: none; widt=
+h: 0px; }
+
+.CodeMirror div.CodeMirror-secondarycursor { border-left: 1px solid silver;=
+ }
+
+.cm-fat-cursor .CodeMirror-cursor { width: auto; background: rgb(119, 238, =
+119); border: 0px !important; }
+
+.cm-fat-cursor div.CodeMirror-cursors { z-index: 1; }
+
+.cm-fat-cursor-mark { background-color: rgba(20, 255, 20, 0.5); animation: =
+1.06s steps(1) 0s infinite normal none running blink; }
+
+.cm-animate-fat-cursor { width: auto; border: 0px; animation: 1.06s steps(1=
+) 0s infinite normal none running blink; background-color: rgb(119, 238, 11=
+9); }
+
+@-webkit-keyframes blink {=20
+  0% { }
+  50% { background-color: transparent; }
+  100% { }
+}
+
+@keyframes blink {=20
+  0% { }
+  50% { background-color: transparent; }
+  100% { }
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor { }
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-rulers { position: absolute; inset: -50px 0px -20px; overflow: =
+hidden; }
+
+.CodeMirror-ruler { border-left: 1px solid rgb(204, 204, 204); top: 0px; bo=
+ttom: 0px; position: absolute; }
+
+.cm-s-default .cm-header { color: blue; }
+
+.cm-s-default .cm-quote { color: rgb(0, 153, 0); }
+
+.cm-negative { color: rgb(221, 68, 68); }
+
+.cm-positive { color: rgb(34, 153, 34); }
+
+.cm-header, .cm-strong { font-weight: bold; }
+
+.cm-em { font-style: italic; }
+
+.cm-link { text-decoration: underline; }
+
+.cm-strikethrough { text-decoration: line-through; }
+
+.cm-s-default .cm-keyword { color: rgb(119, 0, 136); }
+
+.cm-s-default .cm-atom { color: rgb(34, 17, 153); }
+
+.cm-s-default .cm-number { color: rgb(17, 102, 68); }
+
+.cm-s-default .cm-def { color: rgb(0, 0, 255); }
+
+.cm-s-default .cm-variable, .cm-s-default .cm-punctuation, .cm-s-default .c=
+m-property, .cm-s-default .cm-operator { }
+
+.cm-s-default .cm-variable-2 { color: rgb(0, 85, 170); }
+
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type { color: rgb(0, 136, 8=
+5); }
+
+.cm-s-default .cm-comment { color: rgb(170, 85, 0); }
+
+.cm-s-default .cm-string { color: rgb(170, 17, 17); }
+
+.cm-s-default .cm-string-2 { color: rgb(255, 85, 0); }
+
+.cm-s-default .cm-meta { color: rgb(85, 85, 85); }
+
+.cm-s-default .cm-qualifier { color: rgb(85, 85, 85); }
+
+.cm-s-default .cm-builtin { color: rgb(51, 0, 170); }
+
+.cm-s-default .cm-bracket { color: rgb(153, 153, 119); }
+
+.cm-s-default .cm-tag { color: rgb(17, 119, 0); }
+
+.cm-s-default .cm-attribute { color: rgb(0, 0, 204); }
+
+.cm-s-default .cm-hr { color: rgb(153, 153, 153); }
+
+.cm-s-default .cm-link { color: rgb(0, 0, 204); }
+
+.cm-s-default .cm-error { color: rgb(255, 0, 0); }
+
+.cm-invalidchar { color: rgb(255, 0, 0); }
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 187, 0); }
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(170, 34, 34)=
+; }
+
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, 0.3); }
+
+.CodeMirror-activeline-background { background: rgb(232, 242, 255); }
+
+.CodeMirror { position: relative; overflow: hidden; background: white; }
+
+.CodeMirror-scroll { margin-bottom: -30px; margin-right: -30px; padding-bot=
+tom: 30px; height: 100%; outline: none; position: relative; overflow: scrol=
+l !important; }
+
+.CodeMirror-sizer { position: relative; border-right: 30px solid transparen=
+t; }
+
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-fille=
+r, .CodeMirror-gutter-filler { position: absolute; z-index: 6; display: non=
+e; }
+
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden scroll; }
+
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: scroll hidden; }
+
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; min-height: =
+100%; z-index: 3; }
+
+.CodeMirror-gutter { white-space: normal; height: 100%; display: inline-blo=
+ck; vertical-align: top; margin-bottom: -30px; }
+
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: no=
+ne !important; border: none !important; }
+
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; =
+z-index: 4; }
+
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+
+.CodeMirror-gutter-wrapper ::selection { background-color: transparent; }
+
+.CodeMirror-lines { cursor: text; min-height: 1px; }
+
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: transp=
+arent; font-family: inherit; font-size: inherit; margin: 0px; white-space: =
+pre; overflow-wrap: normal; line-height: inherit; color: inherit; z-index: =
+2; position: relative; overflow: visible; -webkit-tap-highlight-color: tran=
+sparent; font-variant-ligatures: contextual; }
+
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; wo=
+rd-break: normal; }
+
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+
+.CodeMirror-linewidget { position: relative; z-index: 2; padding: 0.1px; }
+
+.CodeMirror-widget { }
+
+.CodeMirror-rtl pre { direction: rtl; }
+
+.CodeMirror-code { outline: none; }
+
+.CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutt=
+ers, .CodeMirror-linenumber { box-sizing: content-box; }
+
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflo=
+w: hidden; visibility: hidden; }
+
+.CodeMirror-cursor { position: absolute; pointer-events: none; }
+
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors { visibility: hidden; position: relative; z-index: 3=
+; }
+
+div.CodeMirror-dragcursors { visibility: visible; }
+
+.CodeMirror-focused div.CodeMirror-cursors { visibility: visible; }
+
+.CodeMirror-selected { background: rgb(217, 217, 217); }
+
+.CodeMirror-focused .CodeMirror-selected { background: rgb(215, 212, 240); =
+}
+
+.CodeMirror-crosshair { cursor: crosshair; }
+
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirro=
+r-line > span > span::selection { background: rgb(215, 212, 240); }
+
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); }
+
+.cm-force-border { padding-right: 0.1px; }
+
+@media print {
+  .CodeMirror div.CodeMirror-cursors { visibility: hidden; }
+}
+
+.cm-tab-wrap-hack::after { content: ""; }
+
+span.CodeMirror-selectedtext { background: none; }
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/css/ejs.css
+
+@charset "utf-8";
+
+@font-face { font-family: Cinzel; font-style: normal; font-weight: 700; src=
+: local("Cinzel-Bold"), url("../font/cinzel_bold.woff") format("woff"); }
+
+@font-face { font-family: "PT Mono"; font-style: normal; font-weight: 400; =
+src: local("PT Mono"), local("PTMono-Regular"), url("../font/pt_mono.woff")=
+ format("woff"); }
+
+html, body { padding: 0px; margin: 0px; }
+
+body { font-family: Georgia, "Nimbus Roman No9 L", "Century Schoolbook L", =
+serif; font-size: 20px; line-height: 1.45; color: black; background: white;=
+ }
+
+article { margin: 0px auto; max-width: 35em; padding: 2em 1em 5em; position=
+: relative; overflow-wrap: break-word; }
+
+nav { display: block; height: 0px; text-align: right; }
+
+nav a { font-size: 80%; color: rgb(170, 170, 170) !important; text-decorati=
+on: none !important; }
+
+a.subtlelink { color: black !important; text-decoration: none !important; }
+
+pre { padding: 5px 0px 5px 15px; line-height: 1.35; margin: 1rem 0px; max-w=
+idth: 100%; overflow-x: auto; }
+
+pre[data-language=3D"javascript"] { cursor: pointer; }
+
+p:hover a.p_ident::after, pre:hover a.c_ident::after, h2:hover a.h_ident::a=
+fter, h3:hover a.i_ident::after { content: "=C2=B6"; font-family: Cinzel, G=
+eorgia, serif; color: rgb(136, 136, 136); font-size: 17px; position: absolu=
+te; right: -10px; }
+
+@media screen and (max-width: 800px) {
+  p:hover a.p_ident::after, pre:hover a.c_ident::after, h2:hover a.h_ident:=
+:after, h3:hover a.i_ident::after { right: 5px; }
+  blockquote p:hover a.p_ident::after { right: -15px; }
+}
+
+code, pre, .CodeMirror { font-size: 18px; font-family: "PT Mono", monospace=
+; }
+
+code { padding: 0px 2px; }
+
+h1, h2, h3 { font-family: Cinzel, Georgia, serif; font-weight: 700; margin:=
+ 1rem 0px; letter-spacing: 2px; }
+
+h1 { font-size: 130%; }
+
+h2 { font-size: 115%; }
+
+h3 { font-size: 100%; }
+
+pre.cm-s-default, p, h2, h3 { margin-right: -30px; padding-right: 30px; }
+
+@media screen and (max-width: 800px) {
+  pre.cm-s-default, p, h2, h3 { margin-right: 0px; padding-right: 0px; }
+}
+
+a, a:visited, a:active { text-decoration: none; color: rgb(68, 102, 119); }
+
+a:hover { text-decoration: underline; }
+
+ol { margin: 1em 0px; padding: 0px; counter-reset: li 0; }
+
+ol li { margin: 0px 0px 0px 40px; padding: 0px; list-style: none; position:=
+ relative; }
+
+ol li::before { content: counter(li) "."; counter-increment: li 1; position=
+: absolute; width: 2em; text-align: right; left: -2.5em; top: 1px; font-siz=
+e: 90%; }
+
+ol li p { margin: 0px; }
+
+.chap_num { font-size: 60%; color: rgb(170, 170, 170); margin-top: -0.7em; =
+display: block; }
+
+blockquote { margin: 0px 0px 0px 3em; padding: 0px; position: relative; fon=
+t-size: 85%; }
+
+blockquote p { color: rgb(51, 51, 51); }
+
+blockquote::before { content: "=E2=80=9C"; position: absolute; left: -0.5em=
+; }
+
+blockquote p:last-of-type::after { content: "=E2=80=9D"; }
+
+blockquote footer { position: relative; margin-left: 1em; }
+
+p + footer { margin-top: -0.5em; }
+
+blockquote footer cite { font-style: italic; }
+
+blockquote footer::before { content: "=E2=80=94"; position: absolute; left:=
+ -1em; }
+
+.editor-wrap { margin: 1rem 0px; position: relative; transition: margin-lef=
+t 0.5s ease-out 0s, margin-right 0.5s ease-out 0s; border-bottom: 1px solid=
+ rgb(68, 170, 187); }
+
+.sandbox-output { border-top: 1px solid rgb(68, 170, 187); padding: 4px 0px=
+ 4px 10px; white-space: pre; max-height: 25em; overflow: auto; }
+
+.sandbox-output:empty { display: none; }
+
+.editor-wrap iframe { display: block; border-width: 1px 1px 0px; border-sty=
+le: solid dotted dotted; border-color: rgb(68, 170, 187); border-image: ini=
+tial; padding: 0px; margin: 0px; width: 100%; box-sizing: border-box; }
+
+.sandbox-output pre { margin: 0px; padding: 0px; white-space: pre-wrap; }
+
+.sandbox-output-error { color: red; }
+
+.sandbox-output-warn { color: orange; }
+
+.sandbox-output-etc { color: rgb(17, 170, 17); background: rgb(221, 255, 22=
+1); cursor: pointer; border-radius: 5px; padding: 0px 1px; }
+
+.sandbox-output-prop { color: rgb(68, 68, 68); }
+
+.sandbox-output-etc-block { display: inline-block; vertical-align: top; }
+
+.sandbox-output-etc-block table { border-collapse: collapse; }
+
+.sandbox-output-etc-block table td { vertical-align: top; white-space: pre-=
+wrap; font-family: "PT Mono", monospace; }
+
+.sandbox-output-etc-block table td:first-child { text-align: right; }
+
+.sandbox-menu { position: absolute; z-index: 19; right: -13px; top: -1px; c=
+ursor: pointer; font-size: 80%; overflow: hidden; width: 10px; border-top: =
+2px solid rgb(68, 170, 187); height: 2px; border-bottom: 6px double rgb(68,=
+ 170, 187); }
+
+.sandbox-open-menu { font-family: tahoma, arial, sans-serif; position: abso=
+lute; background: white; border: 1px solid rgb(170, 170, 170); box-shadow: =
+rgba(0, 0, 0, 0.2) 2px 2px 10px; padding: 0px; font-size: 75%; color: black=
+; line-height: 1.3; right: -9px; top: 5px; z-index: 20; }
+
+.sandbox-open-menu div { cursor: pointer; padding: 5px 10px; }
+
+.sandbox-open-menu div:hover { background: rgb(187, 221, 221); }
+
+.cm-s-default .cm-keyword, .sandbox-output-null, .sandbox-output-fun { colo=
+r: rgb(85, 0, 102); }
+
+.cm-s-default .cm-atom, .sandbox-output-bool { color: rgb(17, 0, 102); }
+
+.cm-s-default .cm-number, .sandbox-output-number { color: rgb(0, 68, 34); }
+
+.cm-s-default .cm-def { color: rgb(0, 0, 153); }
+
+.cm-s-default .cm-variable-2, .cm-s-default .cm-attribute { color: rgb(0, 3=
+4, 119); }
+
+.cm-s-default .cm-variable-3 { color: rgb(0, 119, 34); }
+
+.cm-s-default .cm-comment { color: rgb(119, 68, 0); }
+
+.cm-s-default .cm-string, .sandbox-output-string { color: rgb(119, 0, 0); }
+
+.cm-s-default .cm-string-2 { color: rgb(119, 68, 0); }
+
+.cm-s-default .cm-tag, .sandbox-output-symbol { color: rgb(17, 119, 0); }
+
+.CodeMirror { height: auto; line-height: 1.35; border-top: 1px solid rgb(68=
+, 170, 187); overflow-wrap: normal; }
+
+.CodeMirror-scroll { max-height: 700px; }
+
+.CodeMirror pre { padding: 0px 4px 0px 10px; }
+
+.CodeMirror-gutters { border: none; background: white; }
+
+.CodeMirror-linenumber { padding: 0.5em 3px 0px 0px; min-width: 12px; color=
+: rgb(68, 170, 187); font-size: 60%; }
+
+.sandboxhint { position: absolute; right: -15px; font-family: tahoma, arial=
+, sans-serif; font-size: 70%; padding: 4px 8px; background: rgb(220, 220, 2=
+20); color: white; border-radius: 5px; }
+
+@media screen and (max-width: 800px) {
+  .sandboxhint { right: 5px; }
+}
+
+.sandboxhint::before { position: absolute; width: 0px; height: 0px; border-=
+top: 6px solid transparent; border-bottom: 6px solid transparent; border-ri=
+ght: 12px solid rgb(220, 220, 220); top: 6px; left: -11px; content: ""; }
+
+figure { max-width: 640px; margin: 0px 30px; }
+
+figure.chapter { text-align: center; margin: 3em 0px 2em; }
+
+figure.chapter img { max-width: 75%; }
+
+figure.framed img { border-radius: 50%; border: 4px double rgb(102, 102, 10=
+2); }
+
+figure.square-framed img { border-radius: 30px; border: 4px double rgb(102,=
+ 102, 102); }
+
+span.keyname { font-variant: small-caps; }
+
+@media screen and (max-width: 500px) {
+  figure { margin: 0px; }
+}
+
+figure img { max-width: 100%; }
+
+div.solution::before { content: "=C2=BB Display hints..."; }
+
+div.solution { color: rgb(17, 85, 102); cursor: pointer; }
+
+div.solution-text { display: none; }
+
+div.solution.open::before { content: ""; }
+
+div.solution.open { cursor: default; }
+
+div.solution.open div.solution-text { display: block; }
+
+td { vertical-align: top; }
+
+td + td { padding-left: 1em; }
+
+table { margin-left: 15px; }
+
+sub, sup { line-height: 1; }
+
+sub { font-size: 60%; }
+
+sup { font-size: 70%; }
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: https://eloquentjavascript.net/img/chapter_picture_2.jpg
+
+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
+AAAAAAAAAAABYLD/2gAIAQMBAT8Ah+B2/9k=
+
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://eloquentjavascript.net/img/prompt.png
+
+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
+
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/img/controlflow-straight.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc=3D"http://purl.org/dc/elements/1.1/"
+   xmlns:cc=3D"http://creativecommons.org/ns#"
+   xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg=3D"http://www.w3.org/2000/svg"
+   xmlns=3D"http://www.w3.org/2000/svg"
+   xmlns:sodipodi=3D"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape=3D"http://www.inkscape.org/namespaces/inkscape"
+   width=3D"204.48096"
+   height=3D"19.999929"
+   id=3D"svg3216"
+   version=3D"1.1"
+   inkscape:version=3D"0.48.4 r9939"
+   sodipodi:docname=3D"New document 8">
+  <defs
+     id=3D"defs3218">
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Send"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3774"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id=3D"base"
+     pagecolor=3D"#ffffff"
+     bordercolor=3D"#666666"
+     borderopacity=3D"1.0"
+     inkscape:pageopacity=3D"0.0"
+     inkscape:pageshadow=3D"2"
+     inkscape:zoom=3D"0.35"
+     inkscape:cx=3D"156.78125"
+     inkscape:cy=3D"-138.56231"
+     inkscape:document-units=3D"px"
+     inkscape:current-layer=3D"layer1"
+     showgrid=3D"false"
+     fit-margin-top=3D"0"
+     fit-margin-left=3D"0"
+     fit-margin-right=3D"0"
+     fit-margin-bottom=3D"0"
+     inkscape:window-width=3D"1600"
+     inkscape:window-height=3D"875"
+     inkscape:window-x=3D"0"
+     inkscape:window-y=3D"25"
+     inkscape:window-maximized=3D"0" />
+  <metadata
+     id=3D"metadata3221">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about=3D"">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource=3D"http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label=3D"Layer 1"
+     inkscape:groupmode=3D"layer"
+     id=3D"layer1"
+     transform=3D"translate(-218.21875,-373.79994)">
+    <path
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)"
+       d=3D"m 218.236,384.24914 190.41375,0"
+       id=3D"path5135"
+       inkscape:connector-curvature=3D"0"
+       sodipodi:nodetypes=3D"cc" />
+  </g>
+</svg>=0A
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/img/controlflow-if.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc=3D"http://purl.org/dc/elements/1.1/"
+   xmlns:cc=3D"http://creativecommons.org/ns#"
+   xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg=3D"http://www.w3.org/2000/svg"
+   xmlns=3D"http://www.w3.org/2000/svg"
+   xmlns:sodipodi=3D"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape=3D"http://www.inkscape.org/namespaces/inkscape"
+   width=3D"205.10103"
+   height=3D"85.750778"
+   id=3D"svg3283"
+   version=3D"1.1"
+   inkscape:version=3D"0.48.4 r9939"
+   sodipodi:docname=3D"New document 11">
+  <defs
+     id=3D"defs3285">
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Send"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3774"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"marker3266"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3268"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"marker3270"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3272"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"marker3274"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3276"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id=3D"base"
+     pagecolor=3D"#ffffff"
+     bordercolor=3D"#666666"
+     borderopacity=3D"1.0"
+     inkscape:pageopacity=3D"0.0"
+     inkscape:pageshadow=3D"2"
+     inkscape:zoom=3D"0.35"
+     inkscape:cx=3D"1288.581"
+     inkscape:cy=3D"-271.41478"
+     inkscape:document-units=3D"px"
+     inkscape:current-layer=3D"layer1"
+     showgrid=3D"false"
+     fit-margin-top=3D"0"
+     fit-margin-left=3D"0"
+     fit-margin-right=3D"0"
+     fit-margin-bottom=3D"0"
+     inkscape:window-width=3D"1600"
+     inkscape:window-height=3D"875"
+     inkscape:window-x=3D"0"
+     inkscape:window-y=3D"25"
+     inkscape:window-maximized=3D"0" />
+  <metadata
+     id=3D"metadata3288">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about=3D"">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource=3D"http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label=3D"Layer 1"
+     inkscape:groupmode=3D"layer"
+     id=3D"layer1"
+     transform=3D"translate(913.58095,-175.19662)">
+    <g
+       id=3D"g3322"
+       transform=3D"matrix(0,-1,1,0,-1032.3622,-596.20924)">
+      <path
+         style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:bu=
+tt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashar=
+ray:none;marker-end:url(#Arrow1Send)"
+         d=3D"m -815.78349,118.91917 1.01015,27.77919"
+         id=3D"path4943"
+         inkscape:connector-curvature=3D"0"
+         sodipodi:nodetypes=3D"cc" />
+      <path
+         style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:bu=
+tt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashar=
+ray:none;marker-end:url(#Arrow1Send)"
+         d=3D"m -807.70227,168.41664 c 0,0 67.6802,38.3858 7.07106,95.9645"
+         id=3D"path5139"
+         inkscape:connector-curvature=3D"0"
+         sodipodi:nodetypes=3D"cc" />
+      <path
+         sodipodi:nodetypes=3D"cc"
+         inkscape:connector-curvature=3D"0"
+         id=3D"path5141"
+         d=3D"m -813.76319,274.48267 1.01015,35.35534"
+         style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:bu=
+tt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashar=
+ray:none;marker-end:url(#Arrow1Send)" />
+      <path
+         sodipodi:nodetypes=3D"cc"
+         inkscape:connector-curvature=3D"0"
+         id=3D"path5159"
+         d=3D"m -820.86915,168.41664 c 0,0 -67.68021,38.3858 -7.07106,95.96=
+45"
+         style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:bu=
+tt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashar=
+ray:none;marker-end:url(#Arrow1Send)" />
+      <path
+         transform=3D"translate(-888.97485,115.42425)"
+         d=3D"m 80.307123,50.755318 c 0,3.347351 -2.713564,6.060915 -6.0609=
+15,6.060915 -3.347351,0 -6.060915,-2.713564 -6.060915,-6.060915 0,-3.347351=
+ 2.713564,-6.060915 6.060915,-6.060915 3.347351,0 6.060915,2.713564 6.06091=
+5,6.060915 z"
+         sodipodi:ry=3D"6.060915"
+         sodipodi:rx=3D"6.060915"
+         sodipodi:cy=3D"50.755318"
+         sodipodi:cx=3D"74.246208"
+         id=3D"path3001"
+         style=3D"fill:#ff0000;fill-opacity:1;stroke:none"
+         sodipodi:type=3D"arc" />
+    </g>
+  </g>
+</svg>=0A
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/img/controlflow-nested-if.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc=3D"http://purl.org/dc/elements/1.1/"
+   xmlns:cc=3D"http://creativecommons.org/ns#"
+   xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg=3D"http://www.w3.org/2000/svg"
+   xmlns=3D"http://www.w3.org/2000/svg"
+   xmlns:sodipodi=3D"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape=3D"http://www.inkscape.org/namespaces/inkscape"
+   width=3D"238.24316"
+   height=3D"104.35892"
+   id=3D"svg2"
+   version=3D"1.1"
+   inkscape:version=3D"0.48.4 r9939"
+   sodipodi:docname=3D"controlflow-nested-else.svg">
+  <defs
+     id=3D"defs4">
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Send"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3774"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow2Mend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow2Mend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3786"
+         style=3D"fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:roun=
+d"
+         d=3D"M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017=
+078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform=3D"scale(-0.6,-0.6)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Mend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Mend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3768"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Lend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Lend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3762"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id=3D"base"
+     pagecolor=3D"#ffffff"
+     bordercolor=3D"#666666"
+     borderopacity=3D"1.0"
+     inkscape:pageopacity=3D"0.0"
+     inkscape:pageshadow=3D"2"
+     inkscape:zoom=3D"2.8"
+     inkscape:cx=3D"182.61224"
+     inkscape:cy=3D"45.356254"
+     inkscape:document-units=3D"px"
+     inkscape:current-layer=3D"layer1"
+     showgrid=3D"false"
+     showguides=3D"true"
+     inkscape:guide-bbox=3D"true"
+     inkscape:window-width=3D"1600"
+     inkscape:window-height=3D"875"
+     inkscape:window-x=3D"0"
+     inkscape:window-y=3D"25"
+     inkscape:window-maximized=3D"0"
+     fit-margin-top=3D"0"
+     fit-margin-left=3D"0"
+     fit-margin-right=3D"3"
+     fit-margin-bottom=3D"0" />
+  <metadata
+     id=3D"metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about=3D"">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource=3D"http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label=3D"Layer 1"
+     inkscape:groupmode=3D"layer"
+     id=3D"layer1"
+     transform=3D"translate(-222.69525,-394.46429)">
+    <path
+       sodipodi:nodetypes=3D"cc"
+       inkscape:connector-curvature=3D"0"
+       id=3D"path4943"
+       d=3D"m 226.69525,431.70744 27.77919,1.01015"
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)" />
+    <path
+       sodipodi:nodetypes=3D"cc"
+       inkscape:connector-curvature=3D"0"
+       id=3D"path5139"
+       d=3D"m 274.76415,441.21724 c 2.14286,43.57143 36.60008,44.46591 47.3=
+9307,47.42819"
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)" />
+    <path
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)"
+       d=3D"m 411.18732,433.72774 35.35534,1.01015"
+       id=3D"path5141"
+       inkscape:connector-curvature=3D"0"
+       sodipodi:nodetypes=3D"cc" />
+    <path
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)"
+       d=3D"m 278.69272,425.19321 c 0,0 60.8858,-56.96593 122.75021,-4.5710=
+6"
+       id=3D"path5159"
+       inkscape:connector-curvature=3D"0"
+       sodipodi:nodetypes=3D"cc" />
+    <path
+       sodipodi:type=3D"arc"
+       style=3D"fill:#ff0000;fill-opacity:1;stroke:none"
+       id=3D"path3001"
+       sodipodi:cx=3D"74.246208"
+       sodipodi:cy=3D"50.755318"
+       sodipodi:rx=3D"6.060915"
+       sodipodi:ry=3D"6.060915"
+       d=3D"m 80.307123,50.755318 a 6.060915,6.060915 0 1 1 -12.12183,0 6.0=
+60915,6.060915 0 1 1 12.12183,0 z"
+       transform=3D"matrix(0,1,1,0,223.20033,358.51608)" />
+    <path
+       transform=3D"matrix(0,1,1,0,291.77176,418.51608)"
+       d=3D"m 80.307123,50.755318 a 6.060915,6.060915 0 1 1 -12.12183,0 6.0=
+60915,6.060915 0 1 1 12.12183,0 z"
+       sodipodi:ry=3D"6.060915"
+       sodipodi:rx=3D"6.060915"
+       sodipodi:cy=3D"50.755318"
+       sodipodi:cx=3D"74.246208"
+       id=3D"path3002"
+       style=3D"fill:#ff0000;fill-opacity:1;stroke:none"
+       sodipodi:type=3D"arc" />
+    <path
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)"
+       d=3D"m 341.54987,484.43152 c 0,0 0.96327,-38.82118 55.9645,-46.85751=
+"
+       id=3D"path3004"
+       inkscape:connector-curvature=3D"0"
+       sodipodi:nodetypes=3D"cc" />
+    <path
+       sodipodi:nodetypes=3D"cc"
+       inkscape:connector-curvature=3D"0"
+       id=3D"path3006"
+       d=3D"m 350.83558,490.14581 c 24.92879,-3.90484 44.71588,-30.84607 52=
+.03593,-41.14323"
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)" />
+  </g>
+</svg>=0A
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/img/controlflow-loop.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc=3D"http://purl.org/dc/elements/1.1/"
+   xmlns:cc=3D"http://creativecommons.org/ns#"
+   xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg=3D"http://www.w3.org/2000/svg"
+   xmlns=3D"http://www.w3.org/2000/svg"
+   xmlns:sodipodi=3D"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape=3D"http://www.inkscape.org/namespaces/inkscape"
+   width=3D"206.31815"
+   height=3D"72.428215"
+   id=3D"svg2"
+   version=3D"1.1"
+   inkscape:version=3D"0.48.4 r9939"
+   sodipodi:docname=3D"controlflow-loop.svg">
+  <defs
+     id=3D"defs4">
+    <marker
+       inkscape:stockid=3D"Arrow1Send"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Send"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3774"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow2Mend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow2Mend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3786"
+         style=3D"fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:roun=
+d"
+         d=3D"M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017=
+078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform=3D"scale(-0.6,-0.6)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Mend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Mend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3768"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+    <marker
+       inkscape:stockid=3D"Arrow1Lend"
+       orient=3D"auto"
+       refY=3D"0"
+       refX=3D"0"
+       id=3D"Arrow1Lend"
+       style=3D"overflow:visible">
+      <path
+         id=3D"path3762"
+         d=3D"M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style=3D"fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform=3D"matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature=3D"0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id=3D"base"
+     pagecolor=3D"#ffffff"
+     bordercolor=3D"#666666"
+     borderopacity=3D"1.0"
+     inkscape:pageopacity=3D"0.0"
+     inkscape:pageshadow=3D"2"
+     inkscape:zoom=3D"2.8"
+     inkscape:cx=3D"30.225462"
+     inkscape:cy=3D"52.400366"
+     inkscape:document-units=3D"px"
+     inkscape:current-layer=3D"layer1"
+     showgrid=3D"false"
+     showguides=3D"true"
+     inkscape:guide-bbox=3D"true"
+     inkscape:window-width=3D"1600"
+     inkscape:window-height=3D"875"
+     inkscape:window-x=3D"0"
+     inkscape:window-y=3D"25"
+     inkscape:window-maximized=3D"0"
+     fit-margin-top=3D"0"
+     fit-margin-left=3D"0"
+     fit-margin-right=3D"0"
+     fit-margin-bottom=3D"0" />
+  <metadata
+     id=3D"metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about=3D"">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource=3D"http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label=3D"Layer 1"
+     inkscape:groupmode=3D"layer"
+     id=3D"layer1"
+     transform=3D"translate(-376.5106,-433.43911)">
+    <path
+       sodipodi:nodetypes=3D"csc"
+       inkscape:connector-curvature=3D"0"
+       id=3D"path5161"
+       d=3D"m 478.22234,451.00514 c 29.28572,23.75 27.61731,51.59627 -8.711=
+66,51.57646 -36.44966,-0.0199 -18.10635,-25.27225 -9.3957,-39.5054"
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)" />
+    <path
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)"
+       d=3D"m 379.43917,445.98075 73.1512,-1.01015"
+       id=3D"path3003"
+       inkscape:connector-curvature=3D"0"
+       sodipodi:nodetypes=3D"cc" />
+    <path
+       sodipodi:nodetypes=3D"cc"
+       inkscape:connector-curvature=3D"0"
+       id=3D"path3005"
+       d=3D"m 482.59676,443.96045 87.76125,-1.01015"
+       style=3D"fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt=
+;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharra=
+y:none;marker-end:url(#Arrow1Send)" />
+    <path
+       transform=3D"matrix(0,-1,1,0,422.09693,518.66704)"
+       d=3D"m 80.307123,50.755318 c 0,3.347351 -2.713564,6.060915 -6.060915=
+,6.060915 -3.347351,0 -6.060915,-2.713564 -6.060915,-6.060915 0,-3.347351 2=
+.713564,-6.060915 6.060915,-6.060915 3.347351,0 6.060915,2.713564 6.060915,=
+6.060915 z"
+       sodipodi:ry=3D"6.060915"
+       sodipodi:rx=3D"6.060915"
+       sodipodi:cy=3D"50.755318"
+       sodipodi:cx=3D"74.246208"
+       id=3D"path3004"
+       style=3D"fill:#ff0000;fill-opacity:1;stroke:none"
+       sodipodi:type=3D"arc" />
+  </g>
+</svg>=0A
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed----
+Content-Type: text/html
+Content-ID: <frame-B0A930B6DA2A463030654F27CD46C0D4@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://eloquentjavascript.net/empty.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8">
+</head><body></body></html>
+------MultipartBoundary--DjFvrw2eb71QqW0BK0AGjCcMG8YgBKKTHshri9Thed------
