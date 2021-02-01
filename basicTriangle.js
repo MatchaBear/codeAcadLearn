@@ -6,7 +6,7 @@ let triangle = '#';
 for (count = 0; count < 7; count++){
 	//for (column = 0; column < 1; column++){
 		console.log(triangle);
-		triangle++;
+		triangle+=triangle;
 	//};
 	//console.log(triangle.length);
 };
